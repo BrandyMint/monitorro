@@ -1,0 +1,28 @@
+defaults: &defaults
+  session: &session
+    key: _session
+    server:
+      host: <%= ENV['REDIS_HOST'] || 'localhost' %>
+      db: 2
+      port: 6379
+      namespace: :s
+
+  default_url_options: &default_url_options
+    host: <%= ENV['APP_HOST'] || 'localhost' %>
+
+  best_change_repository:
+    redis:
+      url:       redis://localhost:6379/1
+
+  tld_length: <%= ENV['TLD_LENGTH'] || 1 %>
+  sidekiq_redis:
+    url:       redis://localhost:6379/0
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

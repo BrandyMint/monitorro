@@ -52,6 +52,25 @@ gem 'jquery-ui-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'ionicons-rails'
 
+gem 'settingslogic'
+
+gem 'sidekiq-reset_statistics'
+gem 'sidekiq-failures', github: 'mhfs/sidekiq-failures'
+gem 'sidekiq-unique-jobs'
+gem 'sidekiq-status'
+gem 'sidekiq'
+gem 'sidekiq-cron'
+
+gem 'beautiful-log'
+gem 'foreman'
+
+gem 'rcsv' # Rcsv is a fast CSV parsing library for MRI Ruby
+gem 'rubyzip', '>= 1.0.0' # will load new rubyzip version
+# In Gem hell migrating to RubyZip v1.0.0? Include zip-zip in your Gemfile and everything's coming up roses!
+# для axlsx
+gem 'zip-zip'
+
+
 gem 'semver2'
 gem 'active_link_to'
 gem 'simple-navigation', '~> 3.13.0' # git: 'git://github.com/andi/simple-navigation.git'

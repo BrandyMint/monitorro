@@ -1,0 +1,2 @@
+class BestChangeChangersRepository < RedisRepository
+end
