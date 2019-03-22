@@ -5,29 +5,50 @@ class ImportWorker
   include AutoLogger
   include UniqueWorker
 
+  TIMEOUT = 2
+
+  def self.import_all
+    Exchange.find_each do |e|
+      new.perform e.id
+    end
+  end
+
   def perform(exchange_id)
-    exchange = Exchange.find exchange_id
-
-    data = Nokogiri.parse open(exchange.xml_url)
-
+    @exchange = Exchange.find exchange_id
+    @payment_system_codes = Set.new
+    logger.info "Load #{exchange_id} (#{exchange.name})"
+    data = Nokogiri.parse open(exchange.xml_url, read_timeout: TIMEOUT)
     data.xpath('//rates/item').each do |item|
       import_rate item
+    end
+
+    payment_system_codes.each do |code|
+      PaymentSystem.create_with(name: code).find_or_create_by!(code: code)
     end
   end
 
   private
 
-  def import_rate(item)
-    ps_from = find_payment_system item.xpath('from').text
-    ps_to = find_payment_system item.xpath('to').text
-    item.xpath('in').text.to_f
-    item.xpath('out').text.to_f
-    item.xpath('amount').text.to_f
-    item.xpath('minamount').text
-    item.xpath('maxamount').text
-  end
+  attr_reader :exchange, :payment_system_codes
 
-  def find_payment_system(code)
-    PaymentSystem.create_with(name: code).find_or_create_by!(code: code)
+  def import_rate(item)
+    from = item.xpath('from').text
+    to = item.xpath('to').text
+    logger.info "-- parse item #{from}->#{to}"
+
+    payment_system_codes << from
+    payment_system_codes << to
+
+    data = {
+      exchange:    exchange.name,
+      exchange_id: exchange.id,
+      in:          item.xpath('in').text.to_f,
+      out:         item.xpath('out').text.to_f,
+      amount:      item.xpath('amount').text.to_f,
+      minamount:   item.xpath('minamount').text,
+      maxamount:   item.xpath('maxamount').text
+    }
+
+    RatesRepository.add_rate from, to, exchange, data
   end
 end

@@ -1,8 +1,9 @@
 table.table.table-condensed.table-hover.table-striped.table-payment-systems
   thead
     tr
-      th Отдаем
-      th Получаем
+      th Отдаете
+      th Получаете
+      th Обменников
   tbody
     - payment_systems.each do |ps|
       tr
@@ -10,3 +11,6 @@ table.table.table-condensed.table-hover.table-striped.table-payment-systems
           = active_link_to ps.name, rates_path(from: ps.code, to: to_ps.try(:code)), active: from_ps == ps
         td
           = active_link_to ps.name, rates_path(from: from_ps.try(:code), to: ps.code), active: to_ps == ps
+
+        td
+          = RatesRepository.get_rates_count from_ps.code, ps.code

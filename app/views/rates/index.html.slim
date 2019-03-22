@@ -3,3 +3,30 @@ p
   b= from_ps
   span &nbsp;получаем&nbsp;
   b= to_ps
+
+
+table.table.table-condensed.table-striped.table-hover
+  thead
+    tr
+      th Обменник
+      th Отдаете (#{from_ps})
+      th Получаете (#{to_ps})
+      th Резервы
+      th Минималка
+      th Максималка
+  tbody
+    - rates.each do |rate|
+      tr
+        td= rate.exchange
+        td
+          = rate.in
+          span &nbsp;
+          span.text-muted= from_ps
+        td
+          = rate.out
+          span &nbsp;
+          span.text-muted= to_ps
+        td= rate.amount
+        td= rate.minamount
+        td= rate.maxamount
+
