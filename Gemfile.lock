@@ -1,9 +1,23 @@
 GIT
+  remote: https://github.com/BrandyMint/noty_flash.git
+  revision: 8d4a5b618367f0dfbe2a32d82cad134393d93f60
+  specs:
+    noty_flash (0.1.2)
+
+GIT
   remote: https://github.com/BrandyMint/phone.git
   revision: ea695a3ce692c9cbdcf5568f8c93005989f6e430
   branch: feature/russia
   specs:
     phone (1.3.0.beta0)
+
+GIT
+  remote: https://github.com/BrandyMint/unique_worker.git
+  revision: 309c8cbc85670e3b4da329f925b1b9de331c99c0
+  specs:
+    unique_worker (0.1.0)
+      activesupport
+      redlock
 
 GIT
   remote: https://github.com/mhfs/sidekiq-failures.git
@@ -68,7 +82,10 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (8.6.3)
+    auto_logger (0.1.4)
+      activesupport
+      beautiful-log
+    autoprefixer-rails (9.5.0)
       execjs
     awesome_print (1.8.0)
     axiom-types (0.1.1)
@@ -88,9 +105,9 @@ GEM
     bond (0.5.1)
     bootsnap (1.3.0)
       msgpack (~> 1.0)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     breadcrumbs_on_rails (3.0.1)
     bugsnag (6.7.3)
       concurrent-ruby (~> 1.0)
@@ -199,6 +216,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
+    nprogress-rails (0.2.0.2)
     numerizer (0.1.1)
     oj (3.6.2)
     pg (1.0.0)
@@ -266,6 +284,8 @@ GEM
       redis-store (>= 1.2, < 2)
     redis-store (1.5.0)
       redis (>= 2.2, < 5)
+    redlock (1.0.0)
+      redis (>= 3.0.0, < 5.0)
     request_store (1.4.1)
       rack (>= 1.4)
     ruby-progressbar (1.9.0)
@@ -273,17 +293,15 @@ GEM
     rubyzip (1.2.1)
     rufus-scheduler (3.5.0)
       fugit (~> 1.1, >= 1.1.1)
-    sass (3.5.6)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.0.7)
-      railties (>= 4.0.0, < 6)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
+    sassc (2.0.1)
+      ffi (~> 1.9)
+      rake
+    sassc-rails (2.1.0)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.12.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -362,12 +380,13 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
+  auto_logger (~> 0.1.4)
   beautiful-log
   better_errors
   binding_of_caller
   bond
   bootsnap (>= 1.1.0)
-  bootstrap-sass (~> 3.2)
+  bootstrap-sass (~> 3.4)
   breadcrumbs_on_rails
   bugsnag
   byebug
@@ -387,7 +406,10 @@ DEPENDENCIES
   money
   money-rails
   nanoid
+  nokogiri
   non-stupid-digest-assets
+  noty_flash!
+  nprogress-rails
   oj
   pg (>= 0.18, < 2.0)
   phone!
@@ -402,7 +424,7 @@ DEPENDENCIES
   redis-rails
   ruby-progressbar
   rubyzip (>= 1.0.0)
-  sass-rails (~> 5.0)
+  sassc-rails
   selenium-webdriver
   semver2
   settingslogic
@@ -421,6 +443,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  unique_worker!
   virtus
   web-console (>= 3.3.0)
   zip-zip

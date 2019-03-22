@@ -1,0 +1,20 @@
+/*
+ *= require_tree .
+ *= require nprogress
+ *= require nprogress-bootstrap
+ *= require nprogress-turbolinks5
+ *= require_self
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'ionicons';
+/*@import 'variables';*/
+/*@import 'utilities/*';*/
+/*@import 'shared/*';*/
+
+html {
+  /* font-family: "ProximaNova", sans-serif; */
+  font-size: 16px;
+  min-width: 960px;
+}

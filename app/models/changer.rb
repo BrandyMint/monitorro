@@ -1,2 +1,0 @@
-class Changer < ApplicationRecord
-end

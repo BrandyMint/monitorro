@@ -10,7 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
+gem 'nokogiri'
 gem 'draper', '~> 3.0.1' # , github: 'drapergem/draper'
 gem 'non-stupid-digest-assets'
 # Use Redis adapter to run Action Cable in production
@@ -43,6 +43,11 @@ gem 'slim-rails'
 gem 'nanoid'
 
 gem 'virtus'
+
+gem 'auto_logger', '~> 0.1.4'
+gem 'unique_worker', github: 'BrandyMint/unique_worker'
+gem 'noty_flash', github: 'BrandyMint/noty_flash'
+gem 'nprogress-rails'
 
 gem 'ruby-progressbar'
 
@@ -76,7 +81,7 @@ gem 'active_link_to'
 gem 'simple-navigation', '~> 3.13.0' # git: 'git://github.com/andi/simple-navigation.git'
 gem 'simple-navigation-bootstrap'
 gem 'bugsnag'
-gem 'bootstrap-sass', '~> 3.2'
+gem 'bootstrap-sass', '~> 3.4'
 gem 'breadcrumbs_on_rails'
 gem 'phone', github: 'BrandyMint/phone', branch: 'feature/russia'
 
