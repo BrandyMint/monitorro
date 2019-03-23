@@ -35,6 +35,6 @@ class RatesRepository
   private
 
   def redis
-    $redis ||= Redis.new Settings.best_change_repository.redis.symbolize_keys
+    $redis ||= Redis.new Settings.redis.symbolize_keys
   end
 end

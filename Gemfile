@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.2'
+ruby File.read(File.expand_path('../.ruby-version', __FILE__)).chomp
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -107,6 +107,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard'
+  gem 'terminal-notifier-guard' # , '~> 1.6.1', require: darwin_only('terminal-notifier-guard')
+
+  gem 'guard-bundler'
+  gem 'guard-ctags-bundler'
+  gem 'guard-rails'
+  gem 'guard-rubocop'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -115,6 +122,19 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'bugsnag-capistrano', require: false
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-db-tasks', require: false
+  gem 'capistrano-faster-assets', require: false
+  gem 'capistrano-git-with-submodules', '~> 2.0'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rails-console', require: false
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano-shell', require: false
+  gem 'capistrano-sidekiq', require: false
+  gem 'capistrano3-puma', github: 'seuros/capistrano-puma', require: false
 end
 
 group :test do

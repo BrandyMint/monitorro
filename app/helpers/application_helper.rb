@@ -1,5 +1,5 @@
 module ApplicationHelper
   def app_title
-    'demo'
+    "best rate finder #{AppVersion}"
   end
 end

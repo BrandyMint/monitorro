@@ -26,7 +26,7 @@ class FindXmlUrl
       xml_url = exchange.url + path
       logger.debug "Try #{xml_url}"
       if is_xml? xml_url
-        logger.info "Find #{path} for #{url}"
+        logger.info "Find #{path} for #{exchange.url}"
         exchange.update xml_url: xml_url
         break
       end
@@ -41,7 +41,8 @@ class FindXmlUrl
     content = open url, read_timeout: TIMEOUT
     data = Nokogiri.parse content
     data.xpath('//rates/item').any?
-  rescue OpenURI::HTTPError, Net::OpenTimeout => err
+  # rescue OpenURI::HTTPError, Net::OpenTimeout, Net::ReadTimeout, OpenSSL::SSL::SSLError, URI::InvalidURIError => err
+  rescue StandardError => err
     logger.debug "#{url} -> #{err}"
     false
   end
