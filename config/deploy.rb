@@ -8,7 +8,7 @@ set :user, 'wwwkiiiosk'
 set :repo_url, 'git@github.com:BrandyMint/change_finder.git' if ENV['USE_LOCAL_REPO'].nil?
 set :keep_releases, 10
 
-set :linked_files, %w[config/database.yml] # config/master.key]
+set :linked_files, %w[config/database.yml] #  config/master.key]
 set :linked_dirs, %w[log node_modules tmp/pids tmp/cache tmp/sockets public/assets]
 
 set :config_files, fetch(:linked_files)

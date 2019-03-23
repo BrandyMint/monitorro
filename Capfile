@@ -36,3 +36,4 @@ require 'bugsnag-capistrano'
 require 'capistrano/sidekiq'
 
 require 'capistrano/rails/console'
+require 'capistrano/master_key'

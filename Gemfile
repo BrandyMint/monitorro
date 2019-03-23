@@ -136,6 +136,10 @@ group :development do
   gem 'capistrano-shell', require: false
   gem 'capistrano-sidekiq', require: false
   gem 'capistrano3-puma', github: 'seuros/capistrano-puma', require: false
+
+  # run bundle exec cap production master_key:setup
+  # first time
+  gem 'capistrano-master-key', github: 'virgoproz/capistrano-master-key', require: false
 end
 
 group :test do
