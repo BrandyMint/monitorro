@@ -1,0 +1,12 @@
+h1 Обменники
+
+table.table.table-condensed.table-striped.table-hover
+  thead
+    tr
+      th Обменник
+      th Котировок
+  tbody
+    - exchanges.each do |e|
+      tr
+        td= e.name
+        td= RatesRepository.get_rates_count_for_exchange e.id

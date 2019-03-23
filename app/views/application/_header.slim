@@ -1,2 +1,3 @@
-h1= app_title
-br
+= render 'topnav' do
+  = active_link_to 'Котировки', rates_path, wrap_tag: :li
+  = active_link_to 'Обменники', exchanges_path, wrap_tag: :li

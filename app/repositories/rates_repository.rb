@@ -5,7 +5,7 @@ class RatesRepository
   TIMEOUT = 300
 
   class << self
-    delegate :get_rates_count, :add_rate, :list_rates, to: :instance
+    delegate :get_rates_count, :add_rate, :list_rates, :get_rates_count_for_exchange, to: :instance
   end
 
   def get_rates_count(from_ps_code, to_ps_code)
@@ -30,6 +30,11 @@ class RatesRepository
     end.compact.sort do |a,b|
       b.out <=> a.out
     end
+  end
+
+  def get_rates_count_for_exchange(exchange_id)
+    key = ['*', exchange_id].join(':')
+    redis.keys(key).count
   end
 
   private
