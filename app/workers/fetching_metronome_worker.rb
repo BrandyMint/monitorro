@@ -1,6 +1,8 @@
 # Periodicaly start fetching exchange rates data
 #
 class FetchingMetronomeWorker
+  include Sidekiq::Worker
+
   def perform
     Exchange.available.pluck(:id).each do |id|
       ImportWorker.perform_async id
