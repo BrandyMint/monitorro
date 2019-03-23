@@ -64,6 +64,7 @@ gem 'sidekiq-failures', github: 'mhfs/sidekiq-failures'
 gem 'sidekiq-unique-jobs'
 gem 'sidekiq-status'
 gem 'sidekiq'
+gem 'rufus-scheduler', '~> 3.4.0'
 gem 'sidekiq-cron'
 
 gem 'beautiful-log'
