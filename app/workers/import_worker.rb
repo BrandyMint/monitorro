@@ -3,15 +3,8 @@ require 'open-uri'
 class ImportWorker
   include Sidekiq::Worker
   include AutoLogger
-  include UniqueWorker
 
   TIMEOUT = 2
-
-  def self.import_all
-    Exchange.find_each do |e|
-      new.perform e.id
-    end
-  end
 
   def perform(exchange_id)
     @exchange = Exchange.find exchange_id

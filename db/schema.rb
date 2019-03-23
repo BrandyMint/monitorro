@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_22_162724) do
+ActiveRecord::Schema.define(version: 2019_03_23_062837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 2019_03_22_162724) do
   create_table "exchanges", force: :cascade do |t|
     t.string "name", null: false
     t.string "url", null: false
-    t.string "xml_url", null: false
+    t.string "xml_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_available", default: false, null: false
+    t.index ["is_available"], name: "index_exchanges_on_is_available"
     t.index ["name"], name: "index_exchanges_on_name", unique: true
     t.index ["url"], name: "index_exchanges_on_url", unique: true
   end

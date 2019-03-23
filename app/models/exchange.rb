@@ -1,4 +1,6 @@
 class Exchange < ApplicationRecord
+  scope :available, -> { where.not(xml_url: nil) }
+
   def self.add_by_url(url)
     uri = URI.parse(url)
     create!(
