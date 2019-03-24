@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+require_relative 'app/models/app_version'
+require_relative 'app/models/settings'
 
 lock '3.11.0'
 
@@ -33,3 +35,6 @@ set :puma_init_active_record, true
 
 set :db_local_clean, false
 set :db_remote_clean, true
+
+set :bugsnag_api_key, Settings.bugsnag_api_key
+set :app_version, AppVersion.to_s

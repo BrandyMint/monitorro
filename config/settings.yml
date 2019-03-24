@@ -10,6 +10,8 @@ defaults: &defaults
   sidekiq_redis:
     url:       redis://localhost:6379/5
 
+  bugsnag_api_key: c5fc47e40c514a9753014128482149e2
+
 development:
   <<: *defaults
 

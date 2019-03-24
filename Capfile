@@ -4,8 +4,6 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup(:deploy)
 
-require_relative 'app/models/app_version'
-
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 
