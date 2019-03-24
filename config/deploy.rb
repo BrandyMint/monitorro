@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require_relative 'app/models/app_version'
-require_relative 'app/models/settings'
 
 lock '3.11.0'
 

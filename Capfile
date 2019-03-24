@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+require_relative 'app/models/app_version'
+require_relative 'app/models/settings'
 
 require 'rubygems'
 require 'bundler'
