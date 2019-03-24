@@ -7,6 +7,8 @@ table.table.table-condensed.table-hover.table-striped.table-payment-systems
     - payment_systems.each do |ps|
       tr
         td
-          = active_link_to ps.name, rates_path(from: ps.code, to: to_ps.try(:code)), active: from_ps == ps, class:  RatesRepository.get_rates_count(from_ps.code, '*').zero? ? 'text-muted' : ''  
+          - count =  RatesRepository.get_rates_count(ps.code, '*')
+          = active_link_to ps.name, rates_path(from: ps.code, to: to_ps.try(:code)), active: from_ps == ps, class: count.zero? ? 'text-muted' : ''  
+          span.text-muted= " (#{count})"
         td
-          = active_link_to ps.name, rates_path(from: from_ps.try(:code), to: ps.code), active: to_ps == ps, class:  RatesRepository.get_rates_count(from_ps.code, ps.code).zero? ? 'text-muted' : ''
+          = active_link_to ps.name, rates_path(from: from_ps.try(:code), to: ps.code), active: to_ps == ps, class: RatesRepository.get_rates_count(from_ps.code, ps.code).zero? ? 'text-muted' : ''
