@@ -43,6 +43,7 @@ class FindXmlUrl
     data.xpath('//rates/item').any?
   # rescue OpenURI::HTTPError, Net::OpenTimeout, Net::ReadTimeout, OpenSSL::SSL::SSLError, URI::InvalidURIError => err
   rescue StandardError => err
+    exchange.update last_find_error: err.message
     logger.debug "#{url} -> #{err}"
     false
   end
