@@ -32,16 +32,22 @@ class ImportWorker
     payment_system_codes << from
     payment_system_codes << to
 
+    i = item.xpath('in').text.to_f
+    o = item.xpath('out').text.to_f
+
     data = {
-      exchange:    exchange.name,
-      exchange_id: exchange.id,
-      in:          item.xpath('in').text.to_f,
-      out:         item.xpath('out').text.to_f,
-      amount:      item.xpath('amount').text.to_f,
-      minamount:   item.xpath('minamount').text,
-      maxamount:   item.xpath('maxamount').text
+      exchange_id:   exchange.id,
+      exchange_name: exchange.name,
+      in:            i,
+      out:           o,
+      amount:        item.xpath('amount').text.to_f,
+      minamount:     item.xpath('minamount').text,
+      maxamount:     item.xpath('maxamount').text,
+      value:         o/i,
+      at:            Time.zone.now,
+      version:       1
     }
 
-    RatesRepository.add_rate from, to, exchange, data
+    RatesRepository.add_rate from, to, exchange.id, data
   end
 end

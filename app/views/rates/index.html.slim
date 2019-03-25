@@ -14,19 +14,21 @@ table.table.table-condensed.table-striped.table-hover
       th Резервы
       th Минималка
       th Максималка
+      th Время обновления
   tbody
     - rates.each do |rate|
       tr
-        td= rate.exchange
+        td= rate.exchange_name
         td
           = rate.in
           span &nbsp;
-          span.text-muted= from_ps
+          span.text-muted= from_ps.currency
         td
           = rate.out
           span &nbsp;
-          span.text-muted= to_ps
+          span.text-muted= to_ps.currency
         td= rate.amount
         td= rate.minamount
         td= rate.maxamount
+        td= time_ago_in_words(rate.at, include_seconds: true) if rate.at.present?
 
