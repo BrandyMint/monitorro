@@ -8,5 +8,6 @@ table.table.table-condensed.table-striped.table-hover
   tbody
     - exchanges.each do |e|
       tr
-        td= e.name
+        td
+          = link_to e.name, exchange_path(e)
         td= RatesRepository.get_rates_count_for_exchange e.id

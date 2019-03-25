@@ -6,15 +6,13 @@ class RatesRepository
   SEP = ':'.freeze
 
   class << self
-    delegate :get_rates_count, :add_rate, :list_rates, :get_rates_count_for_exchange, to: :instance
+    delegate :get_rates_count, :add_rate, :list_rates, :get_rates_count_for_exchange, :list_rates_for_exchange, to: :instance
   end
 
   def get_rates_count(from_ps_code, to_ps_code)
     key = [from_ps_code, to_ps_code, '*'].join SEP
     redis.keys(key).count
   end
-
-
 
   def add_rate(from_ps_code, to_ps_code, exchange_id, data)
     rate = get_rate(from_ps_code, to_ps_code, exchange_id)
@@ -44,8 +42,16 @@ class RatesRepository
       value = redis.get(key)
       OpenStruct.new Oj.load(value) if value.present?
     end.compact.sort do |a,b|
-      b.out <=> a.out
+      b.value <=> a.value
     end
+  end
+
+  def list_rates_for_exchange(exchange_id)
+    key = ['*', exchange_id].join SEP
+    redis.keys(key).map do |key|
+      value = redis.get(key)
+      OpenStruct.new Oj.load(value) if value.present?
+    end.compact
   end
 
   def get_rates_count_for_exchange(exchange_id)

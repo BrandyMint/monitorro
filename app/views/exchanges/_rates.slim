@@ -1,0 +1,28 @@
+table.table.table-condensed.table-striped.table-hover
+  thead
+    tr
+      th Направление
+      th.text-right Отдаете (#{from_ps})
+      th.text-right Получаете (#{to_ps})
+      th.text-right Резервы
+      th.text-right Минималка
+      th.text-right Максималка
+      th Время обновления
+  tbody
+    - rates.each do |rate|
+      tr
+        td= "#{rate.from_ps_code} -> #{rate.to_ps_code}"
+        td.text-right
+          = rate.in
+          span &nbsp;
+          span.text-muted= from_ps.currency
+        td.text-right
+          = rate.out
+          span &nbsp;
+          span.text-muted= to_ps.currency
+          span &nbsp;
+          = rate_growth rate.value, rate.ex_value
+        td.text-right= rate.amount
+        td.text-right= rate.minamount
+        td.text-right= rate.maxamount
+        td= time_ago_in_words(rate.at, include_seconds: true) if rate.at.present?

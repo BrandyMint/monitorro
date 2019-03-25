@@ -38,6 +38,8 @@ class ImportWorker
     data = {
       exchange_id:   exchange.id,
       exchange_name: exchange.name,
+      from_ps_code:  from,
+      to_ps_code:    to,
       in:            i,
       out:           o,
       amount:        item.xpath('amount').text.to_f,

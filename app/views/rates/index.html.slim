@@ -4,33 +4,4 @@ p
   span &nbsp;получаем&nbsp;
   b= to_ps
 
-
-table.table.table-condensed.table-striped.table-hover
-  thead
-    tr
-      th Обменник
-      th Отдаете (#{from_ps})
-      th Получаете (#{to_ps})
-      th Резервы
-      th Минималка
-      th Максималка
-      th Время обновления
-  tbody
-    - rates.each do |rate|
-      tr
-        td= rate.exchange_name
-        td
-          = rate.in
-          span &nbsp;
-          span.text-muted= from_ps.currency
-        td
-          = rate_growth rate.value, rate.ex_value
-          span &nbsp;
-          = rate.out
-          span &nbsp;
-          span.text-muted= to_ps.currency
-        td= rate.amount
-        td= rate.minamount
-        td= rate.maxamount
-        td= time_ago_in_words(rate.at, include_seconds: true) if rate.at.present?
-
+= render 'rates', rates: rates
