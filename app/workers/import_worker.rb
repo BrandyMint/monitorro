@@ -18,6 +18,12 @@ class ImportWorker
     payment_system_codes.each do |code|
       PaymentSystem.create_with(name: code).find_or_create_by!(code: code)
     end
+
+  rescue => err
+    # TODO Отмечать количество ошибок по обменнику и:
+    # 1. Отключать его и переводить на режим "запрос раз в час"
+    # 2. Сигнализировать админу и владельцу обменника
+    logger.erorr err
   end
 
   private

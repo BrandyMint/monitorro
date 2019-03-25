@@ -1,4 +1,7 @@
 class PaymentSystem < ApplicationRecord
+
+  validates :code, :name, presence: true
+
   def to_s
     name
   end
