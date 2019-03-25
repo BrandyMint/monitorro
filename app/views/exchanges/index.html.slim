@@ -3,11 +3,13 @@ h1 Обменники
 table.table.table-condensed.table-striped.table-hover
   thead
     tr
+      th
       th Обменник
       th Котировок
   tbody
-    - exchanges.each do |e|
+    - exchanges.each_with_index do |e, index|
       tr
+        td.text-right= index + 1
         td
           = link_to e.name, exchange_path(e)
         td= RatesRepository.get_rates_count_for_exchange e.id
