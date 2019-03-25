@@ -24,6 +24,8 @@ table.table.table-condensed.table-striped.table-hover
           span &nbsp;
           span.text-muted= from_ps.currency
         td
+          = rate_growth rate.value, rate.ex_value
+          span &nbsp;
           = rate.out
           span &nbsp;
           span.text-muted= to_ps.currency
