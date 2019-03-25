@@ -33,7 +33,12 @@ class ImportWorker
   def import_rate(item)
     from = item.xpath('from').text
     to = item.xpath('to').text
-    logger.info "-- parse item #{from}->#{to}"
+
+    # TODO ignore if from and to are empty
+    if from.blank? || to.blank?
+      logger.error "[#{exchange.id}] Пустые названия платежных систем '#{from}' -> '#{to}'"
+      return
+    end
 
     payment_system_codes << from
     payment_system_codes << to
