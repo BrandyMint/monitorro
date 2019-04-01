@@ -1,10 +1,2 @@
-.row.m-b-md
-  .col-md-6
-    = render 'search_form', q: q
-  .col-md-3
-    = link_to 'Добавить ссылки на XML', new_admin_exchange_link_url, class: 'btn btn-success'
-
-  .col-md-3
-    .pull-right= link_to 'Добавить обменник', new_admin_exchange_url, class: 'btn btn-success'
-
+= render 'header', q: q
 = render 'table', scope: exchanges, decorator_class: Admin::ExchangeDecorator, columns: columns, allow_edit: true, q: q
