@@ -11,11 +11,13 @@ nav.navbar.navbar-default.navbar-fixed-top class=(namespace==:admin ? 'navbar-in
       ul.nav.navbar-nav
         = yield
 
-      /- if logged_in?
-        /ul.nav.navbar-nav.navbar-right
-          /li.dropdown
-            /= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: :button, 'aria-haspopup' => true, 'aria-expanded' => false do
-              /= ion_icon :user, text: current_user.email
-              /.m-l-sm.span.caret
-            /ul.dropdown-menu
-              /li= link_to t('.exit'), main_app.sessions_path, method: :delete
+      - if namespace == :admin
+        li= link_to 'Войти', new_session_path
+      - if logged_in?
+        ul.nav.navbar-nav.navbar-right
+          li.dropdown
+            = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: :button, 'aria-haspopup' => true, 'aria-expanded' => false do
+              = ion_icon :user, text: current_user.email
+              .m-l-sm.span.caret
+            ul.dropdown-menu
+              li= link_to t('.exit'), main_app.sessions_path, method: :delete

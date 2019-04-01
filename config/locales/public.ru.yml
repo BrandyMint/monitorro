@@ -1,0 +1,8 @@
+ru:
+  public:
+    flashes:
+      welcome: "Добро пожаловать, %{name}"
+      wrong_user: Нет такого пользователя или пароль не верный
+      wrong_captcha: Неверное изображение на картинке
+      not_authenticated: Авторизуйтесь
+      logout: Пока!

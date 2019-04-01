@@ -3,8 +3,11 @@ SIDEKIQ inline mode
 ⛔️ WARNING: Sidekiq testing API enabled, but this is not the test environment.  Your jobs will not go to Redis.
 **************************************************
                    Prefix Verb   URI Pattern                                                                              Controller#Action
-            sidekiq_stats GET    /sidekiq-stats(.:format)                                                                 #<Proc:0x00005650d0300b98@/home/danil/code/change_finder/config/routes.rb:6>
+            sidekiq_stats GET    /sidekiq-stats(.:format)                                                                 #<Proc:0x00005569a0730de8@/home/danil/code/change_finder/config/routes.rb:7>
                      root GET    /                                                                                        dashboard#index
+                 sessions DELETE /sessions(.:format)                                                                      sessions#destroy
+                          POST   /sessions(.:format)                                                                      sessions#create
+              new_session GET    /sessions/new(.:format)                                                                  sessions#new
                     rates GET    /rates(.:format)                                                                         rates#index
                 exchanges GET    /exchanges(.:format)                                                                     exchanges#index
                  exchange GET    /exchanges/:id(.:format)                                                                 exchanges#show
