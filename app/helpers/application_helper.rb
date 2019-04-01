@@ -1,6 +1,6 @@
 module ApplicationHelper
   def app_title
-    "best rate demo #{AppVersion}"
+    "MinotoRRo #{AppVersion}"
   end
 
   def rate_growth(current, last)
