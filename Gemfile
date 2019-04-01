@@ -34,6 +34,7 @@ gem 'redis-rails'
 gem 'dalli'
 
 gem 'authority'
+gem 'gravatarify'
 
 gem 'oj' # optimized json
 

@@ -13,13 +13,14 @@ Rails.application.routes.draw do
       delete :destroy
     end
   end
+  resource :user, only: [:edit, :update], controller: :user
 
   resources :rates, only: [:index]
   resources :exchanges, only: [:index, :show]
   scope '/admin', module: :admin, as: :admin do
     Sidekiq::Web.set :session_secret, Secrets.secret_key_base
     mount Sidekiq::Web => '/sidekiq'
-    root 'exchanges#index'
+    root :to => redirect('/admin/exchanges')
     resources :exchanges
     resources :users, only: [:index]
     resources :exchange_links, only: [:new, :create]

@@ -3,11 +3,18 @@ SIDEKIQ inline mode
 ⛔️ WARNING: Sidekiq testing API enabled, but this is not the test environment.  Your jobs will not go to Redis.
 **************************************************
                    Prefix Verb   URI Pattern                                                                              Controller#Action
-            sidekiq_stats GET    /sidekiq-stats(.:format)                                                                 #<Proc:0x00005569a0730de8@/home/danil/code/change_finder/config/routes.rb:7>
+            sidekiq_stats GET    /sidekiq-stats(.:format)                                                                 #<Proc:0x0000560d6f56d5d8@/home/danil/code/change_finder/config/routes.rb:7>
                      root GET    /                                                                                        dashboard#index
                  sessions DELETE /sessions(.:format)                                                                      sessions#destroy
                           POST   /sessions(.:format)                                                                      sessions#create
               new_session GET    /sessions/new(.:format)                                                                  sessions#new
+                 new_user GET    /user/new(.:format)                                                                      users#new
+                edit_user GET    /user/edit(.:format)                                                                     users#edit
+                     user GET    /user(.:format)                                                                          users#show
+                          PATCH  /user(.:format)                                                                          users#update
+                          PUT    /user(.:format)                                                                          users#update
+                          DELETE /user(.:format)                                                                          users#destroy
+                          POST   /user(.:format)                                                                          users#create
                     rates GET    /rates(.:format)                                                                         rates#index
                 exchanges GET    /exchanges(.:format)                                                                     exchanges#index
                  exchange GET    /exchanges/:id(.:format)                                                                 exchanges#show
@@ -21,14 +28,9 @@ SIDEKIQ inline mode
                           PATCH  /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
                           PUT    /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
                           DELETE /admin/exchanges/:id(.:format)                                                           admin/exchanges#destroy
-     admin_exchange_links GET    /admin/exchange_links(.:format)                                                          admin/exchange_links#index
-                          POST   /admin/exchange_links(.:format)                                                          admin/exchange_links#create
+              admin_users GET    /admin/users(.:format)                                                                   admin/users#index
+     admin_exchange_links POST   /admin/exchange_links(.:format)                                                          admin/exchange_links#create
   new_admin_exchange_link GET    /admin/exchange_links/new(.:format)                                                      admin/exchange_links#new
- edit_admin_exchange_link GET    /admin/exchange_links/:id/edit(.:format)                                                 admin/exchange_links#edit
-      admin_exchange_link GET    /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#show
-                          PATCH  /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#update
-                          PUT    /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#update
-                          DELETE /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#destroy
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show

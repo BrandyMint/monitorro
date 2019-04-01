@@ -3,7 +3,12 @@ ru:
   activerecord:
     models:
       exchange: Обменник
+      user: Пользователь
     attributes:
+      user:
+        name: Имя
+        email: email
+        password: Пароль
       exchange:
         url: Адрес сайта
         name: Название

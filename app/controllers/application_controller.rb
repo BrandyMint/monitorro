@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
   private
 
   def namespace
-    self.class.name.split('::').first.underscore
+    list = self.class.name.split('::')
+    return :public if list.one?
+    list.first.underscore.to_sym
   end
 
   def payment_systems
