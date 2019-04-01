@@ -1,0 +1,11 @@
+h1 Добавляем новый обменник
+hr
+= simple_form_for [:admin, exchange] do |f|
+  .row
+    .col-md-6
+      = f.input :name
+    .col-md-6
+      = f.input :url
+      = f.input :xml_url
+
+  = f.submit 'Добавить', class: 'btn btn-primary'

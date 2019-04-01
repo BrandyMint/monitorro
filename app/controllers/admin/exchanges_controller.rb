@@ -9,21 +9,21 @@ class Admin::ExchangesController < Admin::ApplicationController
     }
   end
 
-  #def new
-    #render locals: {
-      #exchange: Gera::PaymentSystem.new,
-      #columns: EDIT_COLUMNS
-    #}
-  #end
+  def new
+    render locals: {
+      exchange: Exchange.new
+    }
+  end
 
-  #def create
-    #Gera::PaymentSystem.create! permitted_params
-  #rescue ActiveRecord::RecordInvalid => e
-    #render :new, locals: {
-      #exchange: e.record,
-      #columns: EDIT_COLUMNS
-    #}
-  #end
+  def create
+    exchange = Exchange.create! permitted_params
+
+    redirect_to admin_exchanges_url(id: exchange.id, anchor: exchange.id), notice: "Добавили обменник #{exchange.name}"
+  rescue ActiveRecord::RecordInvalid => e
+    render :new, locals: {
+      exchange: e.record,
+    }
+  end
 
   def update
     respond_to do |format|

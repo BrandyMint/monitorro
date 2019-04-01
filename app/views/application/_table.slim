@@ -19,7 +19,7 @@
       tbody
         - scope.each do |record|
           - decorated = decorator_class.decorate record
-          tr class=decorated.try(:row_class)
+          tr class=decorated.try(:row_class) id=record.id
             - columns.each do |column|
               td class=(decorated.try(:column_class, column) || 'text-nowrap')
                 - if allow_edit && allow_edit_column?(record, column)
