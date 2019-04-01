@@ -33,6 +33,8 @@ gem 'redis-namespace'
 gem 'redis-rails'
 gem 'dalli'
 
+gem 'authority'
+
 gem 'oj' # optimized json
 
 gem 'money'

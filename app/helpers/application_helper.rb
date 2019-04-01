@@ -1,6 +1,26 @@
 module ApplicationHelper
+  def allow_edit_column?(record, column)
+    return false if column.to_s == 'id'
+
+    # Бывает в декораторе есть метод, а в самой модели нет
+    return false unless record.respond_to? column
+    return false unless record.respond_to? column.to_s + '='
+
+    value = record.send column
+    return false if value.is_a? ActiveRecord::Associations::CollectionProxy
+
+    return record.respond_to?(:parent) && record.parent.updatable_by?(current_user) unless record.respond_to? :udpatable_by?
+    return false unless record.updatable_by? current_user
+
+    true
+  end
+
   def app_title
-    "MinotoRRo #{AppVersion}"
+    if controller.is_a? Admin::ApplicationController
+      "Админка #{AppVersion}"
+    else
+      "MinotoRRo #{AppVersion}"
+    end
   end
 
   def rate_growth(current, last)

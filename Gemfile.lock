@@ -110,6 +110,8 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
+    authority (3.3.0)
+      activesupport (>= 3.0.0)
     auto_logger (0.1.4)
       activesupport
       beautiful-log
@@ -518,6 +520,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
+  authority
   auto_logger (~> 0.1.4)
   beautiful-log
   best_in_place

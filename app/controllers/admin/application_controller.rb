@@ -1,3 +1,4 @@
 class Admin::ApplicationController < ApplicationController
-  before_action :require_login_from_http_basic
+  layout 'admin/application'
+  # before_action :require_login_from_http_basic
 end

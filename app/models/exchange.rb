@@ -1,4 +1,6 @@
 class Exchange < ApplicationRecord
+  include Authority::Abilities
+
   scope :available, -> { where.not(xml_url: nil) }
 
   def self.add_by_url(url)
