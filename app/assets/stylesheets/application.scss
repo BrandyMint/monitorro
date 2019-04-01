@@ -3,6 +3,7 @@
  *= require nprogress
  *= require nprogress-bootstrap
  *= require nprogress-turbolinks5
+ *= require jquery-ui
  *= require_self
  */
 
@@ -21,4 +22,8 @@ html {
 
 .table-payment-systems {
   .active { font-weight: bold; }
+}
+
+.best_in_place {
+  border-bottom: 1px dashed gray;
 }

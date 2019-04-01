@@ -8,6 +8,7 @@ class ApplicationAuthorizer < Authority::Authorizer
   # @param [Object] user - whatever represents the current user in your app
   # @return [Boolean]
   def self.default(adjective, user)
+    return true if Rails.env.development?
     user.present?
     # 'Whitelist' strategy for security: anything not explicitly allowed is
     # considered forbidden.
