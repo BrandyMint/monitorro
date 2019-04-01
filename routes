@@ -1,0 +1,33 @@
+SIDEKIQ inline mode
+**************************************************
+⛔️ WARNING: Sidekiq testing API enabled, but this is not the test environment.  Your jobs will not go to Redis.
+**************************************************
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+            sidekiq_stats GET    /sidekiq-stats(.:format)                                                                 #<Proc:0x00005650d0300b98@/home/danil/code/change_finder/config/routes.rb:6>
+                     root GET    /                                                                                        dashboard#index
+                    rates GET    /rates(.:format)                                                                         rates#index
+                exchanges GET    /exchanges(.:format)                                                                     exchanges#index
+                 exchange GET    /exchanges/:id(.:format)                                                                 exchanges#show
+        admin_sidekiq_web        /admin/sidekiq                                                                           Sidekiq::Web
+               admin_root GET    /admin(.:format)                                                                         admin/exchanges#index
+          admin_exchanges GET    /admin/exchanges(.:format)                                                               admin/exchanges#index
+                          POST   /admin/exchanges(.:format)                                                               admin/exchanges#create
+       new_admin_exchange GET    /admin/exchanges/new(.:format)                                                           admin/exchanges#new
+      edit_admin_exchange GET    /admin/exchanges/:id/edit(.:format)                                                      admin/exchanges#edit
+           admin_exchange GET    /admin/exchanges/:id(.:format)                                                           admin/exchanges#show
+                          PATCH  /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
+                          PUT    /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
+                          DELETE /admin/exchanges/:id(.:format)                                                           admin/exchanges#destroy
+     admin_exchange_links GET    /admin/exchange_links(.:format)                                                          admin/exchange_links#index
+                          POST   /admin/exchange_links(.:format)                                                          admin/exchange_links#create
+  new_admin_exchange_link GET    /admin/exchange_links/new(.:format)                                                      admin/exchange_links#new
+ edit_admin_exchange_link GET    /admin/exchange_links/:id/edit(.:format)                                                 admin/exchange_links#edit
+      admin_exchange_link GET    /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#show
+                          PATCH  /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#update
+                          PUT    /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#update
+                          DELETE /admin/exchange_links/:id(.:format)                                                      admin/exchange_links#destroy
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

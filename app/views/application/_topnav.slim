@@ -1,4 +1,4 @@
-nav.navbar.navbar-default.navbar-fixed-top
+nav.navbar.navbar-default.navbar-fixed-top class=(namespace==:admin ? 'navbar-inverse' : '')
   .container
     .navbar-header
       button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
@@ -6,7 +6,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to app_title, root_path, class: 'navbar-brand'
+      = link_to app_title, (namespace == :admin ? admin_root_path : root_path), class: 'navbar-brand'
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         = yield
