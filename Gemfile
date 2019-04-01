@@ -82,6 +82,9 @@ gem 'best_in_place'
 
 gem 'semver2'
 gem 'active_link_to'
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'
+gem 'simple_form_bootstrap_inputs'
+
 gem 'simple-navigation', '~> 3.13.0' # git: 'git://github.com/andi/simple-navigation.git'
 gem 'simple-navigation-bootstrap'
 gem 'bugsnag'
