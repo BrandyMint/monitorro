@@ -28,6 +28,19 @@ GIT
       redlock
 
 GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: d44bfe6fe21ab374ceea9d060267d0d38b09ef28
+  specs:
+    polyamorous (2.1.1)
+      activerecord (>= 5.0)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
+      polyamorous (= 2.1.1)
+
+GIT
   remote: https://github.com/mhfs/sidekiq-failures.git
   revision: ade3c0035e8b7df0821a71328fe31dc706226aeb
   specs:
@@ -584,6 +597,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.0)
   rails-assets-noty!
+  ransack!
   rcsv
   redis (~> 4.0)
   redis-namespace

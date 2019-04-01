@@ -43,6 +43,7 @@ gem 'money-rails'
 gem 'slim'
 gem 'slim-rails'
 gem 'nanoid'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 gem 'virtus'
 

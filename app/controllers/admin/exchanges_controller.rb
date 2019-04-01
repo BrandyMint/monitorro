@@ -4,6 +4,7 @@ class Admin::ExchangesController < Admin::ApplicationController
   def index
     render locals: {
       exchanges: exchanges,
+      q: q,
       columns: EDIT_COLUMNS
     }
   end
@@ -42,8 +43,12 @@ class Admin::ExchangesController < Admin::ApplicationController
     @exchange ||= Exchange.find params[:id]
   end
 
+  def q
+    @q ||= Exchange.ransack(params[:q])
+  end
+
   def exchanges
-    Exchange.order(:id)
+    q.result
   end
 
   def permitted_params

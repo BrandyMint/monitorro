@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include PaginationConcern
+
   helper NotyFlash::ApplicationHelper
 
   helper_method :from_ps, :to_ps

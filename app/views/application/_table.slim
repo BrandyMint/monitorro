@@ -1,7 +1,7 @@
 - allow_edit = false unless defined? :allow_edit
 - parent = nil unless defined? :parent
 - if scope.empty?
-  p.text-info Пусто
+  p.text-info= t '.empty'
 - else
   .table-sticky-container
     table.table.table-condensed.table-striped.table-narrow
@@ -9,7 +9,10 @@
         tr
           - columns.each do |column|
             th title=column
-              = decorator_class.attribute_title column
+              - if defined? q
+                = sort_link q, column,  decorator_class.attribute_title(column)
+              - else
+                = decorator_class.attribute_title column
               - if params[:show_attribute]
                 br
                 code.text-small= column
