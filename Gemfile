@@ -57,6 +57,8 @@ gem 'jquery-ui-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'ionicons-rails'
 
+gem 'sorcery'
+
 gem 'settingslogic'
 
 gem 'sidekiq-reset_statistics'
@@ -76,6 +78,7 @@ gem 'rubyzip', '>= 1.0.0' # will load new rubyzip version
 # для axlsx
 gem 'zip-zip'
 
+gem 'best_in_place'
 
 gem 'semver2'
 gem 'active_link_to'
