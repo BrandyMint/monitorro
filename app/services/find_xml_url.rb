@@ -1,3 +1,10 @@
+# Провряет наличие XML-фида у обменика и если есть,
+# то сохраняет его
+#
+# Пример:
+#
+# > FindXmlUrl.find_all
+
 class FindXmlUrl
   include AutoLogger
 
