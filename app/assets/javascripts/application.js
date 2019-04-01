@@ -18,9 +18,10 @@
 //= require jquery-ui
 //= require best_in_place.jquery-ui
 //= require nprogress
-//= require noty_flash
 //= require nprogress-turbolinks
 //= require nprogress-ajax
+//= require noty_flash
+//= require bootstrap-sprockets
 //= require_tree .
 
 
@@ -41,19 +42,8 @@ document.addEventListener("turbolinks:load", function() {
   $('[data-toggle="popover"]').popover();
   $("[data-effect='highlight']").effect('highlight', {}, 1000);
 
-  $('.affix').affix();
+  //$('.affix').affix();
 
-  initializeAutoShow()
   initializeStickyTable()
-  initializePopoverAjax()
-  initializeExchangeRateControll()
-  initializeCurrencyRatesUpdater()
-
-  $('.rate-popover').on('shown.bs.popover', function () {
-    $tip = $(this).data('bs.popover').$tip
-    $tip.attr('style', '')
-    $tip.addClass('popover-bottom-fixed')
-  })
-
-  initializeSwitchery();
+  // initializeSwitchery();
 });

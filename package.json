@@ -1,5 +1,8 @@
 {
-  "name": "change_finder",
+  "name": "KassaAdmin",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "highcharts": "^6.1.1",
+    "jquery-sticky-table-header": "https://github.com/BrandyMint/jquery.stickyTableHeader.git#top-offset"
+  }
 }

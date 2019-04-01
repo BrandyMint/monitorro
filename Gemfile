@@ -147,6 +147,7 @@ group :development do
   gem 'capistrano-rbenv', require: false
   gem 'capistrano-shell', require: false
   gem 'capistrano-sidekiq', require: false
+  gem 'capistrano-yarn', require: false
   gem 'capistrano3-puma', github: 'seuros/capistrano-puma', require: false
 
   # run bundle exec cap production master_key:setup
