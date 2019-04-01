@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
     root 'exchanges#index'
     resources :exchanges
-    resources :exchange_links
+    resources :users, only: [:index]
+    resources :exchange_links, only: [:new, :create]
   end
 end
