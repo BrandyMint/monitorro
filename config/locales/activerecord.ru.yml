@@ -9,6 +9,11 @@ ru:
         xml_url: Ссылка на valuta.xml
         is_available: Забирать данные?
     errors:
+      models:
+        exchange:
+          attributes:
+            is_available:
+              present: Нет смысла включать загрузку если не указан xml_url
       messages:
         uri_component: URI COMponent
       not_found: Не найден
