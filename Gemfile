@@ -106,6 +106,10 @@ gem 'phone', github: 'BrandyMint/phone', branch: 'feature/russia'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+source 'https://rails-assets.org' do
+    gem 'rails-assets-noty'
+end
+
 group :development, :test do
   gem 'pry'
   gem 'bond'

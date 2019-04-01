@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  helper NotyFlash::ApplicationHelper
+
   helper_method :from_ps, :to_ps
   helper_method :payment_systems
 

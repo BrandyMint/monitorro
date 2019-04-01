@@ -17,12 +17,43 @@
 //= require best_in_place
 //= require jquery-ui
 //= require best_in_place.jquery-ui
-//= require jquery.purr
-//= require best_in_place.purr
+//= require nprogress
+//= require noty_flash
+//= require nprogress-turbolinks
+//= require nprogress-ajax
 //= require_tree .
 
 
-$(document).ready(function() {
-  /* Activating Best In Place */
-  jQuery(".best_in_place").best_in_place();
+jQuery(document).on('best_in_place:error', function (event, request, error) {
+  // Display all error messages from server side validation
+  jQuery.each(jQuery.parseJSON(request.responseText), function (index, value) {
+    if (typeof value === "object") {value = index + " " + value.toString(); }
+     Flash.error(value);
+  });
+});
+
+document.addEventListener("turbolinks:load", function() {
+  $(".best_in_place").best_in_place();
+  $('.best_in_place').bind("ajax:success", function () {$(this).closest('td').effect('highlight'); });
+  $('.best_in_place').bind("ajax:error", function () {$(this).closest('td').effect('bounce'); });
+  $('.best_in_place[data-reload-on-success]').bind("ajax:success", function () {NProgress.start(); location.reload();});
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover();
+  $("[data-effect='highlight']").effect('highlight', {}, 1000);
+
+  $('.affix').affix();
+
+  initializeAutoShow()
+  initializeStickyTable()
+  initializePopoverAjax()
+  initializeExchangeRateControll()
+  initializeCurrencyRatesUpdater()
+
+  $('.rate-popover').on('shown.bs.popover', function () {
+    $tip = $(this).data('bs.popover').$tip
+    $tip.attr('style', '')
+    $tip.addClass('popover-bottom-fixed')
+  })
+
+  initializeSwitchery();
 });

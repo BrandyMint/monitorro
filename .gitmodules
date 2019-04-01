@@ -1,0 +1,6 @@
+[submodule "vendor/jquery.stickyTableHeader"]
+  path = vendor/jquery.stickyTableHeader
+  url = git@github.com:BrandyMint/jquery.stickyTableHeader.git
+[submodule "vendor/assets/jquery.stickyTableHeader"]
+	path = vendor/assets/jquery.stickyTableHeader
+	url = git@github.com:BrandyMint/jquery.stickyTableHeader.git
