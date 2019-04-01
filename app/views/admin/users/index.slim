@@ -6,10 +6,12 @@ table.table.table-condensed.table-striped.table-hover
     tr
       th Имя
       th Email
+      th Админ?
       th Последний вход
   tbody
     - users.each do |user|
       tr
         td= user.name
         td= mail_to user.email
+        td= user.is_admin?
         td= humanized_time user.last_login_at
