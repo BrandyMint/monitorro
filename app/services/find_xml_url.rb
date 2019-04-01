@@ -7,7 +7,11 @@ class FindXmlUrl
      '/_export/exchange_xml/',
      "/ru/export/xml",
      "/export/xml",
-     '/valuta.xml'
+     '/valuta.xml',
+     '/request-exportxml.xml',
+     '/exportxml.xml',
+     '/rates.xml',
+     '/bestchange.xml'
   ]
 
   def self.find_all
