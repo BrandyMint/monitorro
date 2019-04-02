@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module ChangeFinder
+module Monitorro
   class Application < Rails::Application
     require './lib/custom_formatter'
     config.log_formatter = CustomFormatter.new

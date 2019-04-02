@@ -2,10 +2,10 @@
 
 lock '3.11.0'
 
-set :application, 'ex.brandymint.ru'
-set :user, 'wwwkiiiosk'
+set :application, 'monitorro.org'
+set :user, 'monitorro'
 
-set :repo_url, 'git@github.com:BrandyMint/change_finder.git' if ENV['USE_LOCAL_REPO'].nil?
+set :repo_url, 'git@github.com:BrandyMint/monitorro.git' if ENV['USE_LOCAL_REPO'].nil?
 set :keep_releases, 10
 
 set :linked_files, %w[config/database.yml] #  config/master.key]
