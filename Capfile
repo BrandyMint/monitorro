@@ -19,6 +19,7 @@ require 'capistrano/scm/git-with-submodules'
 install_plugin Capistrano::SCM::Git::WithSubmodules
 
 require 'capistrano/rbenv'
+require 'capistrano/yarn'
 require 'capistrano/bundler'
 require 'capistrano-db-tasks'
 require 'capistrano/shell'

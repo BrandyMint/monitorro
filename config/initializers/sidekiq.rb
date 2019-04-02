@@ -60,7 +60,6 @@ Sidekiq::Extensions.enable_delay!
 Sidekiq::Logging.logger = ActiveSupport::Logger.new Rails.root.join './log/sidekiq.log'
 Sidekiq.default_worker_options = { 'backtrace' => true }
 
-CRONTAB_FILE = "./config/crontab.yml"
 unless Rails.env.test? || Rails.env.development?
   Sidekiq::Cron::Job.destroy_all!
   Sidekiq::Cron::Job.load_from_hash YAML.load_file(CRONTAB_FILE)
