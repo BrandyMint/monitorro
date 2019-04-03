@@ -1,5 +1,5 @@
 class Admin::ExchangesController < Admin::ApplicationController
-  EDIT_COLUMNS = [:id, :name, :url, :xml_url, :is_available]
+  EDIT_COLUMNS = [:id, :name, :url, :xml_url, :affiliate_url, :is_available]
 
   def index
     render locals: {

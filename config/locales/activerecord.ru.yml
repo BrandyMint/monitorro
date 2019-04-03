@@ -14,6 +14,7 @@ ru:
         name: Название
         xml_url: Ссылка на valuta.xml
         is_available: Забирать данные?
+        affiliate_url: Партнерская ссылка
     errors:
       models:
         exchange:
