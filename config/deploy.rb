@@ -2,7 +2,7 @@
 
 lock '3.11.0'
 
-set :application, 'monitorro.org'
+set :application, 'monitorro'
 set :user, 'monitorro'
 
 set :repo_url, 'git@github.com:BrandyMint/monitorro.git' if ENV['USE_LOCAL_REPO'].nil?
