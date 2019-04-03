@@ -34,5 +34,8 @@ set :puma_init_active_record, true
 set :db_local_clean, false
 set :db_remote_clean, true
 
+set :sidekiq_processes, 3
+set :sidekiq_options_per_process, ['--queue critical', '--queue critical --queue default', '--queue critical --queue default']
+
 set :bugsnag_api_key, Settings.bugsnag_api_key
 set :app_version, AppVersion.to_s
