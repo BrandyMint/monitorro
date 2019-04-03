@@ -45,3 +45,5 @@ public/original_composite_status.json
 *.swp
 notes
 config/master.key
+
+*.sql
