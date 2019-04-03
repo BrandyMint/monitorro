@@ -47,3 +47,4 @@ notes
 config/master.key
 
 *.sql
+*.gz
