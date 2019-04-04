@@ -15,6 +15,8 @@ ru:
         xml_url: Ссылка на valuta.xml
         is_available: Забирать данные?
         affiliate_url: Партнерская ссылка
+        affiliate_login: ЛК логин
+        affiliate_password: ЛК пароль
     errors:
       models:
         exchange:

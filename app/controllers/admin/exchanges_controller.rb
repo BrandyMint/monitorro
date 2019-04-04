@@ -1,5 +1,5 @@
 class Admin::ExchangesController < Admin::ApplicationController
-  EDIT_COLUMNS = [:id, :name, :url, :xml_url, :affiliate_url, :is_available]
+  EDIT_COLUMNS = [:id, :is_available, :name, :url, :xml_url, :affiliate_url, :affiliate_login, :affiliate_password]
 
   def index
     render locals: {
@@ -44,7 +44,11 @@ class Admin::ExchangesController < Admin::ApplicationController
   end
 
   def q
-    @q ||= Exchange.ransack(params[:q])
+    @q ||= begin
+             qq = Exchange.ransack(params[:q])
+             qq.sorts = 'name desc' if qq.sorts.empty?
+             qq
+           end
   end
 
   def exchanges

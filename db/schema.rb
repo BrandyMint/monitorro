@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_092919) do
+ActiveRecord::Schema.define(version: 2019_04_04_140533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_04_03_092919) do
     t.boolean "is_available", default: false, null: false
     t.string "last_find_error"
     t.string "affiliate_url"
+    t.string "affiliate_login"
+    t.string "affiliate_password"
     t.index ["is_available"], name: "index_exchanges_on_is_available"
     t.index ["name"], name: "index_exchanges_on_name", unique: true
     t.index ["url"], name: "index_exchanges_on_url", unique: true
