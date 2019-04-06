@@ -16,7 +16,11 @@ module SmartFormHelper
     record = scope.last
     as, builded_collection = smart_get_as_input record, column
     scope = scope.map { |r| r.is_a?(Draper::Decorator) ? r.object : r }
-    best_in_place scope, column, as: as, value: value, collection: collection || builded_collection
+    best_in_place scope, column, as: as, value: value, collection: collection || builded_collection, display_with: smart_display_with(record, column)
+  end
+
+  def smart_display_with(record, column)
+    lambda { |v| humanized_hostname(v).to_s.html_safe } if column.to_s.end_with? 'url'
   end
 
   def smart_get_as_input(record, column)

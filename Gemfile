@@ -32,6 +32,7 @@ gem "redis", "~> 4.0", :require => ["redis", "redis/connection/hiredis"]
 gem 'redis-namespace'
 gem 'redis-rails'
 gem 'dalli'
+gem 'simpleidn'
 
 gem 'authority'
 gem 'gravatarify'
