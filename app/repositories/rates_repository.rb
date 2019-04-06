@@ -9,7 +9,7 @@ class RatesRepository
     delegate :get_rates_count, :add_rate, :list_rates, :get_rates_count_for_exchange, :list_rates_for_exchange, to: :instance
   end
 
-  def get_rates_count(from_ps_code, to_ps_code)
+  def get_rates_count(from_ps_code, to_ps_code = '*')
     key = [from_ps_code, to_ps_code, '*'].join SEP
     redis.keys(key).count
   end

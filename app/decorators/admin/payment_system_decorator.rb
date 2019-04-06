@@ -1,6 +1,11 @@
 class Admin::PaymentSystemDecorator < ApplicationDecorator
   delegate_all
 
+  def rates_count
+    RatesRepository.get_rates_count(object.code) +
+    RatesRepository.get_rates_count('*', object.code)
+  end
+
   def code
     h.content_tag :div, style: 'max-width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;' do
       object.code

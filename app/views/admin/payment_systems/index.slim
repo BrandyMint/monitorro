@@ -3,10 +3,16 @@
 .row
   .col-md-4
     h2 Неизвестные (#{PaymentSystem.pending.count})
-    = render 'table', scope: PaymentSystem.pending.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code action)
+    .label.label-default Появляются автоматически для разбора
+    hr
+    = render 'table', scope: PaymentSystem.pending.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code rates_count action)
   .col-md-5
     h2 Разрешенные (#{PaymentSystem.allow.count})
+    .label.label-success Используются на сайте
+    hr
     = render 'table', scope: PaymentSystem.allow.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code name), allow_edit: true
   .col-md-3
     h2 Игнорируем (#{PaymentSystem.ignore.count})
+    .label.label-default Игнорируются при импорте
+    hr
     = render 'table', scope: PaymentSystem.ignore.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code)

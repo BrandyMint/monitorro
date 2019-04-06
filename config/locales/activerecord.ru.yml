@@ -21,6 +21,7 @@ ru:
       payment_system:
         name: Название
         code: Код
+        rates_count: Курсов
         action: Действия
     errors:
       models:
