@@ -1,5 +1,7 @@
 ru:
   application:
+    table:
+      empty: Пусто
     topnav:
       exit: Выйти
       profile: Профиль

@@ -23,6 +23,12 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq', constraints: RouteConstraints::AdminRequiredConstraint.new
     root :to => redirect('/admin/exchanges')
     resources :exchanges
+    resources :payment_systems do
+      member do
+        put :ignore
+        put :allow
+      end
+    end
     resources :users, only: [:index]
     resources :exchange_links, only: [:new, :create]
   end
