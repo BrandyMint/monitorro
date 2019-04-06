@@ -60,7 +60,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'ionicons-rails'
+gem "font-ionicons-rails"
+# gem 'ionicons-rails'
 
 gem 'sorcery'
 
@@ -96,6 +97,7 @@ gem 'bugsnag'
 gem 'bootstrap-sass', '~> 3.4'
 gem 'breadcrumbs_on_rails'
 gem 'phone', github: 'BrandyMint/phone', branch: 'feature/russia'
+gem 'dapi-archivable', '~> 0.1.2', require: 'archivable'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

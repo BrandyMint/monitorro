@@ -17,6 +17,7 @@ ru:
         affiliate_url: Партнерская ссылка
         affiliate_login: ЛК логин
         affiliate_password: ЛК пароль
+        action: Действия
       payment_system:
         name: Название
         code: Код

@@ -7,7 +7,7 @@ class Admin::ExchangesController < Admin::ApplicationController
     render locals: {
       exchanges: exchanges,
       q: q,
-      columns: EDIT_COLUMNS
+      columns: EDIT_COLUMNS + [:action]
     }
   end
 
@@ -39,6 +39,12 @@ class Admin::ExchangesController < Admin::ApplicationController
     end
   end
 
+  def destroy
+    exchange.archive!
+    flash.notice = "#{exchange.name} кинули в архив"
+    redirect_back fallback_location: admin_exchanges_path
+  end
+
   private
 
   def exchange
@@ -47,7 +53,7 @@ class Admin::ExchangesController < Admin::ApplicationController
 
   def q
     @q ||= begin
-             qq = Exchange.ransack(params[:q])
+             qq = Exchange.alive.ransack(params[:q])
              qq.sorts = 'name desc' if qq.sorts.empty?
              qq
            end

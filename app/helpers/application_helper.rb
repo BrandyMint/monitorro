@@ -7,12 +7,12 @@ module ApplicationHelper
     uri.to_s
   end
 
-  def ion_icon(icon, css_class: nil, text: nil, title: nil)
-    buffer = content_tag :i, '', class: ['icon', 'ion-' + icon.to_s, css_class]
-    buffer << content_tag(:span, text, class: 'icon-text', title: title) if text.present?
+  #def ion_icon(icon, css_class: nil, text: nil, title: nil)
+    #buffer = content_tag :i, '', class: ['icon', 'ion-' + icon.to_s, css_class]
+    #buffer << content_tag(:span, text, class: 'icon-text', title: title) if text.present?
 
-    buffer
-  end
+    #buffer
+  #end
 
   def app_title
     if controller.is_a? Admin::ApplicationController
