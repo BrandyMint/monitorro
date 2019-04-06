@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+ruby File.read(File.expand_path('.ruby-version', __dir__)).chomp
+
+gem 'nokogiri'
+#gem 'eventmachine'
+
+gem 'pry'
+gem 'em-pg-client', github: 'brandymint/ruby-em-pg-client'
+gem 'em-http-request'
+gem 'em-synchrony'
+
+gem 'concurrent-ruby'
+
+gem 'dalli'
+gem 'msgpack'
