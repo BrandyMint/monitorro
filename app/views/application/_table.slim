@@ -1,6 +1,7 @@
 - allow_edit = false unless allow_edit
 - parent = nil if parent.nil?
 - sticky_header = true if sticky_header.nil?
+
 - if scope.empty?
   p.text-info= t '.empty'
 - else
@@ -9,7 +10,7 @@
       thead.bg-white
         tr
           - columns.each do |column|
-            th title=column
+            th title=column  class=(decorator_class.try(:column_class, column))
               - if defined? q
                 = sort_link q, column,  decorator_class.attribute_title(column)
               - else

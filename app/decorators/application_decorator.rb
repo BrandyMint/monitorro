@@ -3,6 +3,14 @@
 class ApplicationDecorator < Draper::Decorator
   delegate :current_user, :humanized_money_with_currency, to: :h
 
+  def self.column_class(column)
+    'text-right' if column == 'action'
+  end
+
+  def column_class(column)
+    self.class.column_class column
+  end
+
   def self.attribute_title(attr)
     a = attr.to_s.split('_')
     postfix = a.last
