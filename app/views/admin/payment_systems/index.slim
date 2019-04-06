@@ -3,10 +3,10 @@
 .row
   .col-md-4
     h2 Неизвестные (#{PaymentSystem.pending.count})
-    = render 'table', scope: PaymentSystem.pending, decorator_class: Admin::PaymentSystemDecorator, columns: %w(code action)
+    = render 'table', scope: PaymentSystem.pending.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code action)
   .col-md-5
     h2 Разрешенные (#{PaymentSystem.allow.count})
-    = render 'table', scope: PaymentSystem.allow, decorator_class: Admin::PaymentSystemDecorator, columns: %w(name code), allow_edit: true
+    = render 'table', scope: PaymentSystem.allow.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code name), allow_edit: true
   .col-md-3
     h2 Игнорируем (#{PaymentSystem.ignore.count})
-    = render 'table', scope: PaymentSystem.ignore, decorator_class: Admin::PaymentSystemDecorator, columns: %w(code)
+    = render 'table', scope: PaymentSystem.ignore.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code)
