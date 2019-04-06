@@ -1,9 +1,10 @@
-- allow_edit = false unless defined? :allow_edit
-- parent = nil unless defined? :parent
+- allow_edit = false unless allow_edit
+- parent = nil if parent.nil?
+- sticky_header = true if sticky_header.nil?
 - if scope.empty?
   p.text-info= t '.empty'
 - else
-  .table-sticky-container
+  div class=(sticky_header ? 'table-sticky-container' : '')
     table.table.table-condensed.table-striped.table-narrow
       thead.bg-white
         tr

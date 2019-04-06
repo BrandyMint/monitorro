@@ -10,9 +10,9 @@
     h2 Разрешенные (#{PaymentSystem.allow.count})
     .label.label-success Используются на сайте
     hr
-    = render 'table', scope: PaymentSystem.allow.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code name rates_count), allow_edit: true
+    = render 'table', scope: PaymentSystem.allow.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code name rates_count action), allow_edit: true
   .col-md-3
     h2 Игнорируем (#{PaymentSystem.ignore.count})
     .label.label-default Игнорируются при импорте
     hr
-    = render 'table', scope: PaymentSystem.ignore.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code)
+    = render 'table', scope: PaymentSystem.ignore.order(:code), decorator_class: Admin::PaymentSystemDecorator, columns: %w(code action)
