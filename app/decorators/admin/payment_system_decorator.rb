@@ -14,8 +14,8 @@ class Admin::PaymentSystemDecorator < ApplicationDecorator
 
   def action
     buffer = []
-    buffer << h.link_to('Применить', h.allow_admin_payment_system_path(id), method: :put, class: 'btn btn-success btn-xs') unless object.allow?
-    buffer << h.link_to('Игнорировать', h.ignore_admin_payment_system_path(id), method: :put, class: 'btn btn-danger btn-xs') unless object.ignore?
+    buffer << h.link_to(h.ion_icon('checkmark'), h.allow_admin_payment_system_path(id), method: :put, class: 'btn btn-success btn-xs', title: 'Применить') unless object.allow?
+    buffer << h.link_to(h.ion_icon('close'), h.ignore_admin_payment_system_path(id), method: :put, class: 'btn btn-danger btn-xs', title: 'Игнорировать') unless object.ignore?
 
     return if buffer.empty?
     h.content_tag :div, class: 'btn-group' do
