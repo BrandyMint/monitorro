@@ -15,9 +15,7 @@ class ImportWorker
       import_rate item
     end
 
-    payment_system_codes.each do |code|
-      PaymentSystem.create_with(name: code).find_or_create_by!(code: code)
-    end
+    add_payment_systems payment_system_codes
 
   rescue => err
     # TODO Отмечать количество ошибок по обменнику и:
@@ -29,6 +27,16 @@ class ImportWorker
   private
 
   attr_reader :exchange, :payment_system_codes
+
+  def add_payment_systems(payment_system_codes)
+    payment_system_codes.each do |code|
+      PaymentSystem.create_with(name: code).find_or_create_by!(code: code)
+    end
+  end
+
+  def allowed_payment_system_codes
+    @allowed_payment_system_codes ||= Set.new PaymentSystem.allow.pluck(:code)
+  end
 
   def import_rate(item)
     from = item.xpath('from').text
