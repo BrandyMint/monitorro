@@ -9,6 +9,9 @@ module EditableHelper
     value = record.send column
     return false if value.is_a? ActiveRecord::Associations::CollectionProxy
 
+    # CUSTOM
+    return false if record.is_a?(PaymentSystem) && column.to_s == 'code'
+
     if record.respond_to? :updatable_by?
       return record.updatable_by? current_user
     elsif record.respond_to? :parent

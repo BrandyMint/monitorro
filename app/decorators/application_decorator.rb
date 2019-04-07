@@ -4,7 +4,7 @@ class ApplicationDecorator < Draper::Decorator
   delegate :current_user, :humanized_money_with_currency, to: :h
 
   def self.column_class(column)
-    'text-right' if column == 'action'
+    'text-right' if column.to_s == 'action'
   end
 
   def column_class(column)

@@ -4,7 +4,7 @@ class Admin::ExchangeDecorator < ApplicationDecorator
   def action
     buffer = []
     buffer << h.link_to(h.admin_exchange_path(id), method: :delete, class: 'btn btn-danger btn-xs', title: 'Кинуть в архив?', data: { confirm: 'Кидаем в корзину (можно будет восстановить)?' }) do
-      'В корзину'
+      h.ion_icon :close
     end if object.alive?
 
     return if buffer.empty?
