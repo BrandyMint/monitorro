@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_065912) do
+ActiveRecord::Schema.define(version: 2019_04_17_165102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "affiliate_events", force: :cascade do |t|
+    t.bigint "exchange_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["exchange_id"], name: "index_affiliate_events_on_exchange_id"
+  end
 
   create_table "exchanges", force: :cascade do |t|
     t.string "name", null: false
@@ -75,4 +81,5 @@ ActiveRecord::Schema.define(version: 2019_04_17_065912) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token"
   end
 
+  add_foreign_key "affiliate_events", "exchanges"
 end

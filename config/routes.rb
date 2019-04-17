@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   resources :rates, only: [:index]
   resources :exchanges, only: [:index, :show] do
     concerns :archivable
+    member do
+      get :go
+    end
   end
   scope '/admin', module: :admin, as: :admin do
     root :to => redirect('/admin/exchanges')

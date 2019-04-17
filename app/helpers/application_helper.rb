@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def exchange_affiliate_url(exchange)
+    exchange_path(e)
+  end
+
   def humanized_hostname(url)
     return unless url.present?
     uri = Addressable::URI.parse url

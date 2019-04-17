@@ -5,6 +5,8 @@ class Exchange < ApplicationRecord
   scope :available, -> { alive.where(is_available: true).where.not(xml_url: nil) }
   scope :with_xml, -> { where.not(xml_url: nil) }
 
+  has_many :affiliate_events
+
   validates :name, presence: true, uniqueness: true
 
   # TODO Удалять ending slash

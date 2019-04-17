@@ -11,5 +11,5 @@ table.table.table-condensed.table-striped.table-hover
       tr
         td.text-right= index + 1
         td
-          = link_to e.name, exchange_path(e)
+          = link_to e.name, go_exchange_url(e), target: '_blank'
         td= RatesRepository.get_rates_count_for_exchange e.id
