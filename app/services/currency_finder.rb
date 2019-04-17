@@ -9,7 +9,7 @@ module CurrencyFinder
     end
   end
 
-  def currency_from_ps_code(code)
+  def self.currency_from_ps_code(code)
     CURRENCIES.find { |cur| code.include? cur }
   end
 end
