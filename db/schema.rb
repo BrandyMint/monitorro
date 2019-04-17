@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_06_190824) do
+ActiveRecord::Schema.define(version: 2019_04_17_065912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_04_06_190824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0, null: false
+    t.string "currency_iso_code"
     t.index ["code"], name: "index_payment_systems_on_code", unique: true
     t.index ["name"], name: "index_payment_systems_on_name", unique: true
   end
