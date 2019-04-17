@@ -52,7 +52,7 @@ module SmartFormHelper
     # PaymentSystem#currency
     if as == :input && attribute_name == 'currency'
       as = :select
-      collection = Money::Currency.all.map(&:iso_code).map { |s| [s,s] }
+      collection = Money::Currency.all.map(&:iso_code).sort.map { |s| [s,s] }
     end
 
     [as, collection]
