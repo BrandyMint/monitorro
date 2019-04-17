@@ -1,0 +1,179 @@
+BTC	Bitcoin (BTC)
+BCH	Bitcoin Cash (BCH)
+BSV	Bitcoin SV (BSV)
+BTG	Bitcoin Gold (BTG)
+ETH	Ethereum (ETH)
+ETC	Ether Classic (ETC)
+LTC	Litecoin (LTC)
+XRP	Ripple (XRP)
+XMR	Monero (XMR)
+DOGE	Dogecoin (DOGE)
+PPC	Peercoin (PPC)
+DASH	Dash (DASH)
+ZEC	Zcash (ZEC)
+USDT	Tether (USDT)
+USDC	USD Coin (USDC)
+TUSD	TrueUSD (TUSD)
+XEM	NEM (XEM)
+REP	Augur (REP)
+NEO	NEO (NEO)
+EOS	EOS (EOS)
+IOTA	IOTA (MIOTA)
+LSK	Lisk (LSK)
+ADA	Cardano (ADA)
+XLM	Stellar (XLM)
+BCN	Bytecoin (BCN)
+TRX	TRON (TRX)
+WAVES	Waves (WAVES)
+OMG	OmiseGO (OMG)
+XVG	Verge (XVG)
+ZRX	0x (ZRX)
+BNB	Binance Coin (BNB)
+ICX	ICON (ICX)
+KMD	Komodo (KMD)
+BTT	BitTorrent (BTT)
+QWRUB	QIWI RUB
+QWUSD	QIWI USD
+QWEUR	QIWI EUR
+QWKZT	QIWI KZT
+YAMRUB	Яндекс.Деньги
+WMZ	WMZ
+WMR	WMR
+WME	WME
+WMU	WMU
+WMB	WMB
+WMK	WMK
+WMG	WMG
+WMX	WMX
+PMRUSD	Paymer USD
+PMRRUB	Paymer RUB
+PMUSD	Perfect Money USD
+PMEUR	Perfect Money EUR
+PMBTC	Perfect Money BTC
+PMVUSD	PM e-Voucher USD
+PPUSD	PayPal USD
+PPRUB	PayPal RUB
+PPEUR	PayPal EUR
+PPGBP	PayPal GBP
+ADVCUSD	Advanced Cash USD
+ADVCRUB	Advanced Cash RUB
+ADVCEUR	Advanced Cash EUR
+ADVCUAH	Advanced Cash UAH
+PRUSD	Payeer USD
+PRRUB	Payeer RUB
+PREUR	Payeer EUR
+SKLUSD	Skrill USD
+SKLEUR	Skrill EUR
+SKLGBP	Skrill GBP
+WOUSD	W1 USD
+WORUB	W1 RUB
+IDAMD	Idram
+PAXUMUSD	Paxum
+CPTSUSD	Capitalist USD
+CPTSRUB	Capitalist RUB
+EPSUSD	Epese
+NTLRUSD	Neteller USD
+NTLREUR	Neteller EUR
+PSRUSD	PaySera
+PSCEUR	PaySafeCard
+STPUSD	SolidTrust Pay
+EPMUSD	ePayments USD
+EPMEUR	ePayments EUR
+NIXUSD	NixMoney USD
+NIXEUR	NixMoney EUR
+GMUAH	GlobalMoney
+EPAYUSD	Epay USD
+EPAYEUR	Epay EUR
+ALPCNY	Alipay
+WCTCNY	WeChat
+LQUSD	LiqPay
+EKZT	E-kzt
+MWRUB	Счет телефона RUB
+MWUAH	Счет телефона UAH
+TRDUSD	Криптобиржи USD
+TRDEUR	Криптобиржи EUR
+EXMUSD	Exmo USD
+EXMRUB	Exmo RUB
+EXMEUR	Exmo EUR
+EXMUAH	Exmo UAH
+EXMBTC	Exmo BTC
+LVCNUSD	LiveCoin USD
+LVCNRUB	LiveCoin RUB
+ECNEXUSD	eCoin
+CCXUSD	C-Cex
+KUNAUAH	Kuna
+SBERRUB	Сбербанк
+ACRUB	Альфа-Банк
+ACCUSD	Альфа cash-in USD
+ACCRUB	Альфа cash-in RUB
+TCSBRUB	Тинькофф
+TCSBCRUB	ТКС cash-in
+TBRUB	ВТБ
+RUSSTRUB	Русский Стандарт
+AVBRUB	Авангард
+PSBRUB	Промсвязьбанк
+GPBRUB	Газпромбанк
+KUKRUB	Кукуруза
+RFBRUB	Райффайзен
+RNKBRUB	РНКБ
+OPNBRUB	Открытие
+RKTBRUB	Рокетбанк
+P24USD	Приват 24 USD
+P24UAH	Приват 24 UAH
+RFBUAH	Райффайзен UAH
+OSDBUAH	Ощадбанк
+USBUAH	УкрСиббанк
+PMBBUAH	ПУМБ
+MONOBUAH	Монобанк
+BLRBBYN	Беларусбанк
+KKBKZT	Казкоммерцбанк
+HLKBKZT	HalykBank
+SBERKZT	Сбербанк KZT
+FRTBKZT	ForteBank
+KSPBKZT	Kaspi Bank
+CARDUSD	Visa/MasterCard USD
+CARDRUB	Visa/MasterCard RUB
+CARDEUR	Visa/MasterCard EUR
+CARDUAH	Visa/MasterCard UAH
+CARDBYN	Visa/MasterCard BYN
+CARDKZT	Visa/MasterCard KZT
+CARDAMD	Visa/MasterCard AMD
+CARDGBP	Visa/MasterCard GBP
+CARDCNY	Visa/MasterCard CNY
+CARDJPY	Visa/MasterCard JPY
+AMEXUSD	Карта AmEx
+MIRCRUB	Карта Мир
+UPCNY	Карта UnionPay
+UZCUZS	Карта UZCARD
+WIREUSD	Любой банк USD
+WIRERUB	Любой банк RUB
+WIREEUR	Любой банк EUR
+WIREUAH	Любой банк UAH
+WIREKZT	Любой банк KZT
+WIREGBP	Любой банк GBP
+WIRECNY	Любой банк CNY
+WIREPLN	Любой банк PLN
+WIRETHB	Любой банк THB
+WIREINR	Любой банк INR
+WIRENGN	Любой банк NGN
+SEPAEUR	Sepa EUR
+ERIPBYN	ЕРИП Расчет
+STLMRUB	Счет ИП или ООО
+WUUSD	WU USD
+WUEUR	WU EUR
+MGUSD	MoneyGram USD
+MGEUR	MoneyGram EUR
+CNTUSD	Contact USD
+CNTRUB	Contact RUB
+GCMTUSD	Золотая Корона USD
+GCMTRUB	Золотая Корона RUB
+USTMUSD	Юнистрим USD
+USTMRUB	Юнистрим RUB
+RMTFUSD	Ria USD
+RMTFEUR	Ria EUR
+CASHUSD	Наличные USD
+CASHRUB	Наличные RUB
+CASHEUR	Наличные EUR
+CASHUAH	Наличные UAH
+CASHBYN	Наличные BYN
+CASHKZT	Наличные KZT

@@ -12,13 +12,20 @@ MoneyRails.configure do |config|
     drop_trailing_zeros: true
   }
 end
+
 Money::Currency.all.each do |cur|
   Money::Currency.unregister cur.id.to_s
 end
 
-Psych.load( File.read "#{Rails.root}/config/currencies.yml" ).each { |key, cur| Money::Currency.register cur.symbolize_keys }
+Psych.load( File.read "#{Rails.root}/config/currencies.yml" ).
+  each { |key, cur| Money::Currency.register cur.symbolize_keys }
 
-# Создают константы-валюты, типа RUB, USD и тп
-Money::Currency.all.each do |cur|
-  Object.const_set cur.iso_code, cur
+priority = Money::Currency.all.count + 1
+File.read('./config/currencies.txt').each_line do |l|
+  code, *name = l.split
+  name = name.join ' '
+
+  unless Money::Currency.find(code)
+    Money::Currency.register iso_code: code, name: name, priority: priority+=1
+  end
 end

@@ -16,18 +16,6 @@ rub:
   iso_numeric: '643'
   smallest_denomination: 1
   is_crypto: false
-
-  # Местные настройки
-  #
-  # Идентфикатор в type_cy
-  local_id: 1
-
-  # минимальная сумма валюты на прием (из minGetSum)
-  minimal_input_value: 150
-
-  # минимальная сумма валюты на выдачу (из minGetSumOut)
-  minimal_output_value: 150
-
 usd:
   priority: 2
   iso_code: USD
@@ -46,17 +34,6 @@ usd:
   smallest_denomination: 1
   is_crypto: false
 
-  # Местные настройки
-  #
-  # Идентфикатор в type_cy
-  local_id: 2
-
-  # минимальная сумма валюты на прием (из minGetSum)
-  minimal_input_value: 3
-
-  # минимальная сумма валюты на выдачу (из minGetSumOut)
-  minimal_output_value: 3
-
 btc:
   priority: 3
   iso_code: BTC
@@ -72,17 +49,6 @@ btc:
   iso_numeric: ''
   smallest_denomination: 1
   is_crypto: true
-
-  # Местные настройки
-  #
-  # Идентфикатор в type_cy
-  local_id: 3
-
-  # минимальная сумма валюты на прием (из minGetSum) 0.001
-  minimal_input_value: 0.001
-
-  # минимальная сумма валюты на выдачу (из minGetSumOut) 0.004
-  minimal_output_value: 0.004
 
 # Курс 126_000 рублей
 ltc:
@@ -101,11 +67,6 @@ ltc:
   iso_numeric: ''
   smallest_denomination: 1
   is_crypto: true
-  authorized_round: 5
-
-  local_id: 4
-  minimal_input_value: 0.05
-  minimal_output_value: 0.1
 
 eth:
   priority: 5
@@ -123,12 +84,7 @@ eth:
   thousands_separator: ","
   iso_numeric: ''
   smallest_denomination: 1
-  authorized_round: 6
   is_crypto: true
-
-  local_id: 5
-  minimal_input_value: 0.01
-  minimal_output_value: 0.01
 
 # Darkcoin Dash was originally released as XCoin (XCO
 dsh:
@@ -146,12 +102,7 @@ dsh:
   thousands_separator: ","
   iso_numeric: ''
   smallest_denomination: 1
-  authorized_round: 6
   is_crypto: true
-
-  local_id: 6
-  minimal_input_value: 0.01
-  minimal_output_value: 0.02
 
 kzt:
   priority: 7
@@ -169,10 +120,6 @@ kzt:
   is_crypto: false
   smallest_denomination: 1
 
-  local_id: 8
-  minimal_input_value: 2000
-  minimal_output_value: 2000
-
 xrp:
   priority: 8
   iso_code: XRP
@@ -188,12 +135,7 @@ xrp:
   thousands_separator: ","
   iso_numeric: ''
   smallest_denomination: 1
-  authorized_round: 6
   is_crypto: true
-
-  local_id: 9
-  minimal_input_value: 10
-  minimal_output_value: 20
 
 etc:
   priority: 9
@@ -210,12 +152,7 @@ etc:
   thousands_separator: ","
   iso_numeric: ''
   smallest_denomination: 1
-  authorized_round: 6
   is_crypto: true
-
-  local_id: 10
-  minimal_input_value: 0.5
-  minimal_output_value: 0.5
 
 xmr:
   priority: 10
@@ -231,12 +168,7 @@ xmr:
   thousands_separator: ","
   iso_numeric: ''
   smallest_denomination: 1
-  authorized_round: 6
   is_crypto: true
-
-  local_id: 11
-  minimal_input_value: 0.2
-  minimal_output_value: 0.2
 
 bch:
   priority: 11
@@ -253,12 +185,7 @@ bch:
   thousands_separator: ","
   iso_numeric: ''
   smallest_denomination: 1
-  authorized_round: 8
   is_crypto: true
-
-  local_id: 12
-  minimal_input_value: 0.005
-  minimal_output_value: 0.005
 
 eur:
   priority: 12
@@ -276,17 +203,6 @@ eur:
   smallest_denomination: 1
   is_crypto: false
 
-  # Местные настройки
-  #
-  # Идентфикатор в type_cy
-  local_id: 13
-
-  # минимальная сумма валюты на прием (из minGetSum)
-  minimal_input_value: 3
-
-  # минимальная сумма валюты на выдачу (из minGetSumOut)
-  minimal_output_value: 3
-
 neo:
   priority: 13
   iso_code: NEO
@@ -303,17 +219,6 @@ neo:
   smallest_denomination: 1
   is_crypto: true
 
-  # Местные настройки
-  #
-  # Идентфикатор в type_cy
-  local_id: 14
-
-  # минимальная сумма валюты на прием (из minGetSum)
-  minimal_input_value: 1
-
-  # минимальная сумма валюты на выдачу (из minGetSumOut)
-  minimal_output_value: 1
-
 zec:
   priority: 14
   iso_code: ZEC
@@ -329,14 +234,3 @@ zec:
   iso_numeric: ''
   smallest_denomination: 1
   is_crypto: true
-
-  # Местные настройки
-  #
-  # Идентфикатор в type_cy
-  local_id: 15
-
-  # минимальная сумма валюты на прием (из minGetSum)
-  minimal_input_value: 0.001
-
-  # минимальная сумма валюты на выдачу (из minGetSumOut)
-  minimal_output_value: 0.004
