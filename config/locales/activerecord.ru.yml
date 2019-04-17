@@ -23,6 +23,7 @@ ru:
         code: Код
         rates_count: Курсов
         action: Действия
+        currency: Валюта
     errors:
       models:
         exchange:

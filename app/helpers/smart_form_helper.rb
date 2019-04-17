@@ -20,7 +20,11 @@ module SmartFormHelper
   end
 
   def smart_display_with(record, column)
-    lambda { |v| humanized_hostname(v).to_s.html_safe } if column.to_s.end_with? 'url'
+    if column.to_s.end_with? 'url'
+      lambda { |v| humanized_hostname(v).to_s.html_safe }
+    elsif column.to_s == 'currency'
+      lambda { |v| v.try :iso_code }
+    end
   end
 
   def smart_get_as_input(record, column)
@@ -48,7 +52,7 @@ module SmartFormHelper
     # PaymentSystem#currency
     if as == :input && attribute_name == 'currency'
       as = :select
-      collection = Money::Currency.all.map(&:iso_code)
+      collection = Money::Currency.all.map(&:iso_code).map { |s| [s,s] }
     end
 
     [as, collection]
