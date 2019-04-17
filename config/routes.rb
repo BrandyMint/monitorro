@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   end
   # default_url_options Settings.default_url_options.symbolize_keys
   get '/sidekiq-stats' => proc { [200, { 'Content-Type' => 'text/plain' }, [Sidekiq::Stats.new.to_json]] }
+  Sidekiq::Web.set :session_secret, Secrets.secret_key_base
+  mount Sidekiq::Web => '/sidekiq', constraints: RouteConstraints::AdminRequiredConstraint.new
 
   root controller: 'dashboard', action: 'index'
 
@@ -27,8 +29,6 @@ Rails.application.routes.draw do
     concerns :archivable
   end
   scope '/admin', module: :admin, as: :admin do
-    Sidekiq::Web.set :session_secret, Secrets.secret_key_base
-    mount Sidekiq::Web => '/sidekiq', constraints: RouteConstraints::AdminRequiredConstraint.new
     root :to => redirect('/admin/exchanges')
     resources :exchanges
     resources :currencies, only: [:index]
