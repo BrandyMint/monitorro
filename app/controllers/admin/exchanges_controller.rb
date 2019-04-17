@@ -1,6 +1,4 @@
 class Admin::ExchangesController < Admin::ApplicationController
-  layout 'admin/application-fluid'
-
   EDIT_COLUMNS = [:id, :is_available, :name, :url, :xml_url, :affiliate_url]
 
   def index
