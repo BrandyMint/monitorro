@@ -2,47 +2,57 @@ SIDEKIQ inline mode
 **************************************************
 ⛔️ WARNING: Sidekiq testing API enabled, but this is not the test environment.  Your jobs will not go to Redis.
 **************************************************
-                     Prefix Verb   URI Pattern                                                                              Controller#Action
-              sidekiq_stats GET    /sidekiq-stats(.:format)                                                                 #<Proc:0x000055bb2d6edbe0@/home/danil/code/monitorro/config/routes.rb:14>
-                sidekiq_web        /sidekiq                                                                                 Sidekiq::Web
-                       root GET    /                                                                                        dashboard#index
-                   sessions DELETE /sessions(.:format)                                                                      sessions#destroy
-                            POST   /sessions(.:format)                                                                      sessions#create
-                new_session GET    /sessions/new(.:format)                                                                  sessions#new
-                  edit_user GET    /user/edit(.:format)                                                                     user#edit
-                       user PATCH  /user(.:format)                                                                          user#update
-                            PUT    /user(.:format)                                                                          user#update
-                      rates GET    /rates(.:format)                                                                         rates#index
-           archive_exchange DELETE /exchanges/:id/archive(.:format)                                                         exchanges#archive
-           restore_exchange POST   /exchanges/:id/restore(.:format)                                                         exchanges#restore
-                go_exchange GET    /exchanges/:id/go(.:format)                                                              exchanges#go
-                  exchanges GET    /exchanges(.:format)                                                                     exchanges#index
-                   exchange GET    /exchanges/:id(.:format)                                                                 exchanges#show
-                 admin_root GET    /admin(.:format)                                                                         redirect(301, /admin/exchanges)
-            admin_exchanges GET    /admin/exchanges(.:format)                                                               admin/exchanges#index
-                            POST   /admin/exchanges(.:format)                                                               admin/exchanges#create
-         new_admin_exchange GET    /admin/exchanges/new(.:format)                                                           admin/exchanges#new
-        edit_admin_exchange GET    /admin/exchanges/:id/edit(.:format)                                                      admin/exchanges#edit
-             admin_exchange GET    /admin/exchanges/:id(.:format)                                                           admin/exchanges#show
-                            PATCH  /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
-                            PUT    /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
-                            DELETE /admin/exchanges/:id(.:format)                                                           admin/exchanges#destroy
-           admin_currencies GET    /admin/currencies(.:format)                                                              admin/currencies#index
-ignore_admin_payment_system PUT    /admin/payment_systems/:id/ignore(.:format)                                              admin/payment_systems#ignore
- allow_admin_payment_system PUT    /admin/payment_systems/:id/allow(.:format)                                               admin/payment_systems#allow
-      admin_payment_systems GET    /admin/payment_systems(.:format)                                                         admin/payment_systems#index
-                            POST   /admin/payment_systems(.:format)                                                         admin/payment_systems#create
-   new_admin_payment_system GET    /admin/payment_systems/new(.:format)                                                     admin/payment_systems#new
-  edit_admin_payment_system GET    /admin/payment_systems/:id/edit(.:format)                                                admin/payment_systems#edit
-       admin_payment_system GET    /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#show
-                            PATCH  /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#update
-                            PUT    /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#update
-                            DELETE /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#destroy
-                admin_users GET    /admin/users(.:format)                                                                   admin/users#index
-       admin_exchange_links POST   /admin/exchange_links(.:format)                                                          admin/exchange_links#create
-    new_admin_exchange_link GET    /admin/exchange_links/new(.:format)                                                      admin/exchange_links#new
-         rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
-  rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
-         rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
-  update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
-       rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+                       Prefix Verb   URI Pattern                                                                              Controller#Action
+                sidekiq_stats GET    /sidekiq-stats(.:format)                                                                 #<Proc:0x000056502b32edb8@/home/danil/code/monitorro/config/routes.rb:14>
+                  sidekiq_web        /sidekiq                                                                                 Sidekiq::Web
+                         root GET    /                                                                                        dashboard#index
+                     sessions DELETE /sessions(.:format)                                                                      sessions#destroy
+                              POST   /sessions(.:format)                                                                      sessions#create
+                  new_session GET    /sessions/new(.:format)                                                                  sessions#new
+                    edit_user GET    /user/edit(.:format)                                                                     user#edit
+                         user PATCH  /user(.:format)                                                                          user#update
+                              PUT    /user(.:format)                                                                          user#update
+                        rates GET    /rates(.:format)                                                                         rates#index
+             archive_exchange DELETE /exchanges/:id/archive(.:format)                                                         exchanges#archive
+             restore_exchange POST   /exchanges/:id/restore(.:format)                                                         exchanges#restore
+                  go_exchange GET    /exchanges/:id/go(.:format)                                                              exchanges#go
+                    exchanges GET    /exchanges(.:format)                                                                     exchanges#index
+                     exchange GET    /exchanges/:id(.:format)                                                                 exchanges#show
+                   admin_root GET    /admin(.:format)                                                                         redirect(301, /admin/exchanges)
+months_admin_affiliate_events GET    /admin/affiliate_events/months(.:format)                                                 admin/affiliate_events#months
+  days_admin_affiliate_events GET    /admin/affiliate_events/days(.:format)                                                   admin/affiliate_events#days
+       admin_affiliate_events GET    /admin/affiliate_events(.:format)                                                        admin/affiliate_events#index
+                              POST   /admin/affiliate_events(.:format)                                                        admin/affiliate_events#create
+    new_admin_affiliate_event GET    /admin/affiliate_events/new(.:format)                                                    admin/affiliate_events#new
+   edit_admin_affiliate_event GET    /admin/affiliate_events/:id/edit(.:format)                                               admin/affiliate_events#edit
+        admin_affiliate_event GET    /admin/affiliate_events/:id(.:format)                                                    admin/affiliate_events#show
+                              PATCH  /admin/affiliate_events/:id(.:format)                                                    admin/affiliate_events#update
+                              PUT    /admin/affiliate_events/:id(.:format)                                                    admin/affiliate_events#update
+                              DELETE /admin/affiliate_events/:id(.:format)                                                    admin/affiliate_events#destroy
+              admin_exchanges GET    /admin/exchanges(.:format)                                                               admin/exchanges#index
+                              POST   /admin/exchanges(.:format)                                                               admin/exchanges#create
+           new_admin_exchange GET    /admin/exchanges/new(.:format)                                                           admin/exchanges#new
+          edit_admin_exchange GET    /admin/exchanges/:id/edit(.:format)                                                      admin/exchanges#edit
+               admin_exchange GET    /admin/exchanges/:id(.:format)                                                           admin/exchanges#show
+                              PATCH  /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
+                              PUT    /admin/exchanges/:id(.:format)                                                           admin/exchanges#update
+                              DELETE /admin/exchanges/:id(.:format)                                                           admin/exchanges#destroy
+             admin_currencies GET    /admin/currencies(.:format)                                                              admin/currencies#index
+  ignore_admin_payment_system PUT    /admin/payment_systems/:id/ignore(.:format)                                              admin/payment_systems#ignore
+   allow_admin_payment_system PUT    /admin/payment_systems/:id/allow(.:format)                                               admin/payment_systems#allow
+        admin_payment_systems GET    /admin/payment_systems(.:format)                                                         admin/payment_systems#index
+                              POST   /admin/payment_systems(.:format)                                                         admin/payment_systems#create
+     new_admin_payment_system GET    /admin/payment_systems/new(.:format)                                                     admin/payment_systems#new
+    edit_admin_payment_system GET    /admin/payment_systems/:id/edit(.:format)                                                admin/payment_systems#edit
+         admin_payment_system GET    /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#show
+                              PATCH  /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#update
+                              PUT    /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#update
+                              DELETE /admin/payment_systems/:id(.:format)                                                     admin/payment_systems#destroy
+                  admin_users GET    /admin/users(.:format)                                                                   admin/users#index
+         admin_exchange_links POST   /admin/exchange_links(.:format)                                                          admin/exchange_links#create
+      new_admin_exchange_link GET    /admin/exchange_links/new(.:format)                                                      admin/exchange_links#new
+           rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+    rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+           rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+    update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+         rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

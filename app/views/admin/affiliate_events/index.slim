@@ -1,0 +1,28 @@
+- if action_name == 'days'
+  = link_to '&larr; назад в своду за год'.html_safe, months_admin_affiliate_events_path
+h1 
+  | Отчет по переходам
+  - if action_name == 'days'
+    |  за месяц #{month}
+
+
+hr
+table.table.table-condensed.table-striped.table-narrow
+  thead
+    tr 
+      th Обменник
+      th За все периоды
+      - columns.each do |column|
+        th= link_to column, days_admin_affiliate_events_path(month: column)
+  tbody
+    tr
+      th По всем
+      td= events[:all][:all]
+      - columns.each do |column|
+        th= middot events[:all][column]
+    - exchanges.each do |e|
+      tr
+        td= link_to e.name, admin_exchange_path(e)
+        td= middot events[e.id][:all]
+        - columns.each do |column|
+          td= middot events[e.id][column]

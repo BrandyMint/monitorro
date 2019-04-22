@@ -33,6 +33,12 @@ Rails.application.routes.draw do
   end
   scope '/admin', module: :admin, as: :admin do
     root :to => redirect('/admin/exchanges')
+    resources :affiliate_events do
+      collection do
+        get :months
+        get :days
+      end
+    end
     resources :exchanges
     resources :currencies, only: [:index]
     resources :payment_systems do

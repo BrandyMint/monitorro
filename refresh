@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rails r FetchingMetronomeWorker.new.perform

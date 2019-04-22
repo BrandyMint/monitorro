@@ -16,6 +16,11 @@ class ExchangesController < ApplicationController
   def go
     exchange = Exchange.find params[:id]
     exchange.affiliate_events.create!
-    redirect_to exchange.affiliate_url.presence || exchange.url
+    if Rails.env.production?
+      redirect_to exchange.affiliate_url.presence || exchange.url
+    else
+      flash.notice = "Как бы перешёл на #{exchange.name}"
+      redirect_back fallback_location: root_url
+    end
   end
 end

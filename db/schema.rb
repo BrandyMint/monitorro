@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_165102) do
+ActiveRecord::Schema.define(version: 2019_04_22_171505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,12 @@ ActiveRecord::Schema.define(version: 2019_04_17_165102) do
   create_table "affiliate_events", force: :cascade do |t|
     t.bigint "exchange_id", null: false
     t.datetime "created_at", null: false
+    t.date "date", null: false
+    t.integer "month", null: false
+    t.integer "year", null: false
+    t.integer "day", null: false
     t.index ["exchange_id"], name: "index_affiliate_events_on_exchange_id"
+    t.index ["year", "month", "day", "exchange_id"], name: "full"
   end
 
   create_table "exchanges", force: :cascade do |t|

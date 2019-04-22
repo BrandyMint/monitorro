@@ -42,6 +42,8 @@ gem 'oj' # optimized json
 gem 'money'
 gem 'money-rails'
 
+gem 'liquid-rails'
+
 gem 'slim'
 gem 'slim-rails'
 gem 'nanoid'
