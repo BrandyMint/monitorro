@@ -1,6 +1,6 @@
 class PaymentSystem < ApplicationRecord
 
-  validates :code, :name, presence: true
+  validates :code, :name, presence: true, uniqueness: true
 
   enum status: { pending: 0, allow: 1, ignore: -1 }
 

@@ -28,7 +28,10 @@ File.read('./db/payment_systems.txt').each_line do |l|
 end
 
 Money::Currency.all.each do |cur|
-  PaymentSystem.create_with(name: cur.name).find_or_create_by(code: cur.iso_code)
+  puts cur.iso_code
+  PaymentSystem.
+    create_with(name: cur.name).
+    find_or_create_by(code: cur.iso_code)
 end
 
 PaymentSystem.where(currency_iso_code: nil).find_each do |ps|
