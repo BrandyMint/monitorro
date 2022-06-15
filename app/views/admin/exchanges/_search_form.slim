@@ -1,0 +1,4 @@
+= search_form_for [:admin, q], builder: SimpleForm::FormBuilder, html: { class: 'form-inline' } do |f|
+  = f.input :name_or_url_or_xml_url_cont, label: false, placeholder: 'Поиск по названию или ссылке', as: :string
+  = f.submit 'Найти', class: 'btn btn-primary'
+  span.m-l-md= link_to 'Сбросить', admin_exchanges_path if params[:q].present?

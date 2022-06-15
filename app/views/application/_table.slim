@@ -1,0 +1,33 @@
+- allow_edit = false unless allow_edit
+- parent = nil if parent.nil?
+- sticky_header = true if sticky_header.nil?
+
+- if scope.empty?
+  p.text-info= t '.empty'
+- else
+  div class=(sticky_header ? 'table-sticky-container' : '')
+    table.table.table-condensed.table-striped.table-narrow
+      thead.bg-white
+        tr
+          - columns.each do |column|
+            th title=column  class=(decorator_class.try(:column_class, column))
+              - if defined? q
+                = sort_link q, column,  decorator_class.attribute_title(column)
+              - else
+                = decorator_class.attribute_title column
+              - if params[:show_attribute]
+                br
+                code.text-small= column
+      tbody
+        - scope.each do |record|
+          - decorated = decorator_class.decorate record
+          tr class=decorated.try(:row_class) id=record.id
+            - columns.each do |column|
+              td class=(decorated.try(:column_class, column) || 'text-nowrap')
+                - if allow_edit && allow_edit_column?(record, column)
+                  - value = record.send column
+                  = smart_best_in_place [namespace, parent, decorated].compact, column, value
+                - else
+                  = decorated.send column
+
+  = paginate scope if scope.respond_to? :total_pages

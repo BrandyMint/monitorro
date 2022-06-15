@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+while true
+do
+  rails r FetchingMetronomeWorker.new.perform
+	sleep 1
+done

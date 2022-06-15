@@ -1,0 +1,9 @@
+h1 Результат загрузки:
+
+- if results.empty?
+  p.alert.alert-warning Ничего не загружено
+- else
+  table.table.table-condensed
+    - results.each do |str|
+      tr
+        td= str

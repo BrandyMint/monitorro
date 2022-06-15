@@ -1,0 +1,14 @@
+.row.m-b-md
+  .col-md-12
+    span Всего обменников: <b>#{Exchange.alive.count}</b>
+    span.m-l-md Со ссылкой на XML: <b>#{Exchange.alive.with_xml.count}</b>
+    span.m-l-md Разрешенные к загрузке: <b>#{Exchange.available.count}</b>
+
+.row.m-b-md
+  .col-md-6
+    = render 'search_form', q: q
+  .col-md-3
+    = link_to 'Добавить ссылки на XML', new_admin_exchange_link_url, class: 'btn btn-success'
+
+  .col-md-3
+    .pull-right= link_to 'Добавить обменник', new_admin_exchange_url, class: 'btn btn-success'

@@ -1,0 +1,12 @@
+[data-bip-type="checkbox"].best_in_place {
+    cursor: pointer;
+}
+
+[data-bip-value="false"] {
+    background-color: inherit;
+    color: #ccc;
+}
+
+.best_in_place {
+  border-bottom: 1px dashed gray;
+}

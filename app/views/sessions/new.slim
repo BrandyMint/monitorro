@@ -1,0 +1,11 @@
+- if message.present?
+  .alert.alert-info.m-b-md= message
+
+= simple_form_for user_session, url: main_app.sessions_path do |f|
+  = f.input :login, label: 'Логин'
+  = f.input :password, label: 'Пароль'
+  /- if f.object.errors[:captcha].any?
+    /.alert.alert-danger= f.object.errors[:captcha].join(',')
+  /- unless disable_captcha?
+    /.m-b-md= show_simple_captcha  object: :user_session
+  = f.button :submit, 'Войти', class: 'btn btn-success', data: { disable_with: 'Входим..' }

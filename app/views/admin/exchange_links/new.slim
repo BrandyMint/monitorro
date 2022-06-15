@@ -1,0 +1,8 @@
+h1 Добавляем ссылки на XML-выгрузки
+hr
+= simple_form_for form, url: admin_exchange_links_path, method: :post do |f|
+  .row
+    .col-md-12
+      = f.input :links, as: :text, label: 'Построчный список ссылок на XML файлы'
+
+  = f.submit 'Добавить', class: 'btn btn-primary'
