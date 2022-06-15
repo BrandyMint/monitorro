@@ -1,7 +1,6 @@
 require 'open-uri'
 
 class ImportWorker
-  include Sidekiq::Worker
   include AutoLogger
 
   TIMEOUT = 2

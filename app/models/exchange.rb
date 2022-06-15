@@ -9,6 +9,9 @@ class Exchange < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
+  before_validation do
+    self.url = SimpleIDN.to_ascii url if url.present?
+  end
   # TODO Удалять ending slash
   validates :url, presence: true, uniqueness: true, uri_component: { component: :ABS_URI }
   validates :xml_url, uri_component: { component: :ABS_URI }, if: :xml_url
@@ -20,6 +23,7 @@ class Exchange < ApplicationRecord
   end
 
   def self.add_by_url(url)
+    url = SimpleIDN.to_ascii url
     uri = URI.parse(url)
     create!(
       name: uri.host,

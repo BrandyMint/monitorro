@@ -38,3 +38,5 @@ PaymentSystem.where(currency_iso_code: nil).find_each do |ps|
   cur = Money::Currency.all.find { |cur| ps.code.upcase.include?(cur.iso_code) || ps.name.upcase.include?(cur.iso_code) }
   ps.update currency_iso_code: cur.iso_code if cur.present?
 end
+
+require './db/load_exchangers'

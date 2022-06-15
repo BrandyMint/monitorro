@@ -1,12 +1,10 @@
 require 'csv'
 
 CSV.foreach("db/exchangers.csv")  do |row|
-  next if row.first == 'Обменник'
-  next if row.second.blank?
-  url = row.second
-  name = row.first
+  name, url, xml_url = row
   Exchange.
-    create_with(name: name).
+    create_with(name: name, xml_url: xml_url, is_available: true).
     find_or_create_by!(url: url)
-  puts url
+rescue => err
+  puts "#{url} -> #{err}"
 end

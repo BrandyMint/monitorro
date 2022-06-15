@@ -3,7 +3,7 @@
 class FetchingMetronomeWorker
   def perform
     Exchange.available.pluck(:id).each do |id|
-      ImportWorker.perform_async id
+      ImportWorker.new.perform id
     end
   end
 end
