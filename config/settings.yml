@@ -1,0 +1,22 @@
+defaults: &defaults
+  default_url_options: &default_url_options
+    host: <%= ENV['APP_HOST'] || 'localhost' %>
+
+  tld_length: <%= ENV['TLD_LENGTH'] || 2 %>
+
+  redis:
+    url:       redis://localhost:6379/4
+
+  sidekiq_redis:
+    url:       redis://localhost:6379/5
+
+  bugsnag_api_key: c5fc47e40c514a9753014128482149e2
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

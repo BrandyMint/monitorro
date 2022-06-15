@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  gem 'scss-lint'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -60,6 +61,12 @@ gem "draper", "~> 4.0"
 gem "simpleidn", "~> 0.2.1"
 gem "authority", "~> 3.3"
 gem "nokogiri", "~> 1.13"
+gem "hiredis", "~> 0.6.0"
+# Use Redis adapter to run Action Cable in production
+gem "redis", "~> 4.0", :require => ["redis", "redis/connection/hiredis"]
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'dalli'
 
 gem "oj", "~> 3.13"
 gem "money-rails", "~> 1.15"
@@ -72,6 +79,7 @@ gem "virtus", "~> 2.0"
 gem "auto_logger", "~> 0.1.7"
 gem "nprogress-rails", "~> 0.2.0"
 gem "jquery-rails", "~> 4.5"
+gem 'jquery-ui-rails'
 
 gem 'active_link_to'
 gem 'simple_form'
@@ -91,3 +99,13 @@ gem "zip-zip", "~> 0.3"
 gem "semver2", "~> 3.4"
 gem "foreman", "~> 0.87.2"
 gem "sorcery", "~> 0.16.3"
+
+gem "font-ionicons-rails", "~> 2.0"
+
+gem 'sprockets', '3.7.2'
+
+gem "best_in_place", git: "https://github.com/mmotherwell/best_in_place"
+
+gem "coffee-rails", "~> 5.0"
+
+gem "settingslogic", "~> 2.0"
